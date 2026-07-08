@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace-manifest.json",
+  "name": "content-skills",
+  "description": "Daniel Goldman's content-factory plugins for Claude Code.",
+  "owner": {
+    "name": "Daniel Goldman",
+    "email": "danielthegoldman@gmail.com",
+    "url": "https://github.com/dangogit"
+  },
+  "plugins": [
+    {
+      "name": "content-factory",
+      "source": "./plugins/content-factory",
+      "description": "Hebrew AI/agent personal-brand content skills: carousels, guide CTA automation, and reels.",
+      "category": "content",
+      "tags": ["instagram", "carousel", "reels", "hebrew", "short-form"]
+    }
+  ]
+}

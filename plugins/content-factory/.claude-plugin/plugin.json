@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "content-factory",
+  "displayName": "Content Factory",
+  "version": "0.1.0",
+  "description": "Hebrew AI/agent personal-brand content skills: Instagram carousels (faceless and with-face), comment-for-guide CTA automation, video-to-reel with Hebrew hooks, Hebrew-captioned talking-head reels, and Israeli social strategy.",
+  "author": {
+    "name": "Daniel Goldman",
+    "email": "danielthegoldman@gmail.com",
+    "url": "https://github.com/dangogit"
+  },
+  "homepage": "https://github.com/dangogit/content-skills",
+  "repository": "https://github.com/dangogit/content-skills",
+  "license": "MIT",
+  "keywords": [
+    "instagram",
+    "carousel",
+    "reels",
+    "hebrew",
+    "short-form",
+    "content",
+    "social-media",
+    "metricool"
+  ]
+}
