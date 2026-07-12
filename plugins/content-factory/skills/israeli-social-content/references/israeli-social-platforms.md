@@ -1,42 +1,40 @@
-# Israeli Social Media Platforms Guide
+# Israeli Social Platform Context
 
-## Platform Demographics (early 2026)
+Updated: 2026-07-10
 
-Sources: NapoleonCat (Jan 2026), DataReportal Digital 2025/2026 Israel, ISOC-IL Annual Report 2025.
+Use these figures only for directional audience context. They are advertising reach
+or registered-member figures, not comparable monthly-active-user counts.
 
-| Platform | Users (IL) | Primary Age | Penetration | Notes |
-|----------|-----------|-------------|-------------|-------|
-| Facebook | ~5.05M ad reach (~7.6M all-ages, NapoleonCat) | 25-55 | ~53% (ad reach) | Groups are #1 community channel; roughly tied with Instagram on scale |
-| Instagram | ~5M | 18-35 | ~52% of population | Reels driving growth, +13.6% YoY |
-| TikTok | ~4.49M (18+) | 16-30 | ~69% of adults 18+ | Fastest growing, total users higher |
-| LinkedIn | ~3.1M | 25-55 | ~33% of population | One of the highest per-capita globally |
-| YouTube | ~7M | All ages | ~73% of population | Largest single platform in Israel by reach |
-| Twitter/X | ~0.88M | 25-45 | ~9% of population | Tech/politics niche, shrinking (about -16% YoY) |
-| Threads | ~0.35M | 18-40 | small but emerging | Meta's text app, growing off Instagram |
-| Telegram | ~2M+ | 20-40 | ~71% usage rate (ISOC-IL) | Developer communities, news channels |
-| WhatsApp | ~9.4M | All ages | ~99% of population | Universal, not a marketing platform |
+| Platform | Late-2025 planning figure | Method caveat |
+|---|---:|---|
+| YouTube | 7.01M | Google ad reach |
+| Facebook | 5.05M | Meta ad reach, not active users |
+| Instagram | 5.00M | Meta ad reach, not active users |
+| TikTok | 4.49M adults 18+ | TikTok ad reach excludes younger users |
+| LinkedIn | 3.10M members | Registered members, not active users |
 
-Note: TikTok figure is 18+ ad reach (DataReportal). Total users including under-18 are higher. LinkedIn counts registered members, not monthly active users.
+Source: `https://datareportal.com/reports/digital-2026-israel`
 
-## Facebook Groups (Key Marketing Channel)
-Israeli Facebook groups are the dominant content discovery and community channel. Types:
-- City/neighborhood groups (e.g., "תושבי רמת גן")
-- Professional groups (e.g., "שיווק דיגיטלי ישראל")
-- Buy/sell groups (e.g., "יד 2 תל אביב")
-- Parenting groups (e.g., "אמהות ואבות")
-- Food groups (e.g., "מה בישלת היום?")
+## How To Use This Context
 
-## Hebrew Hashtag Best Practices
-- No underscores in Hebrew hashtags
-- No spaces (Hebrew words concatenate naturally)
-- Mix popular + niche tags
-- Popular: #ישראל #תלאביב #שיווקדיגיטלי #הייטקישראלי #סטארטאפ #עסקיםקטנים
+- Never choose network from audience size alone.
+- Use the creator's current distribution contract and account performance.
+- Treat age bands, best times, content frequency, and language-performance claims
+  as account hypotheses unless direct evidence exists.
+- Include YouTube in Israeli platform planning when video format fits.
 
-## Content Calendar Considerations
-- **Shabbat**: No posting Friday afternoon through Saturday night
-- **Yom Kippur**: Absolutely no commercial content
-- **Yom HaZikaron**: Memorial day, no commercial content
-- **Rosh Hashana**: Greeting cards, new year content
-- **Hanukkah**: Gift guides, promotions
-- **Purim**: Fun/costume content
-- **Yom Ha'atzmaut**: National pride, celebrations
+## Hebrew And RTL
+
+- Write spoken Israeli Hebrew.
+- Start Hebrew lines with Hebrew character.
+- Put Latin hashtags and mentions on separate lines.
+- Isolate code and commands with bidi-safe markup.
+- Do not transliterate technical terms when English is required, but do not mix short
+  Latin tokens into Hebrew lines when substitution or isolation works.
+
+## Calendar
+
+- Verify Hebrew-calendar dates live each year.
+- Treat Yom Kippur and Yom HaZikaron with strict sensitivity.
+- Test, rather than assume, Friday and Saturday performance.
+- Use Metricool best-time and historical post data for schedule decisions.

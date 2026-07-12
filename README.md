@@ -1,7 +1,8 @@
 # content-skills
 
-A Claude Code plugin marketplace with one plugin, **content-factory** - the
-Skills behind Daniel Goldman's Hebrew AI/agent personal-brand content pipeline.
+A Claude Code plugin marketplace with one plugin, **content-factory**. It ships
+reusable Hebrew short-form content workflows with explicit proof, QA, and
+publishing gates.
 
 ## Install
 
@@ -31,15 +32,17 @@ claude --plugin-dir ./plugins/content-factory
 | reel | `/content-factory:reel` | Turns a video clip into a published FB/IG/TikTok/YouTube reel with a burned-in Hebrew hook title. |
 | hebrew-captioned-video-reels | `/content-factory:hebrew-captioned-video-reels` | Adds Hebrew IG-style captions to talking-head video, cuts silence, adds a first-5s hook, schedules to Metricool. |
 | israeli-social-content | `/content-factory:israeli-social-content` | Social content strategy and Hebrew copy tuned for Israeli audiences across FB/IG/TikTok/LinkedIn. |
+| viral-short-form | `/content-factory:viral-short-form` | Builds objective-led short-form story packets with proof, narrative spine, and one-variable experiments. |
+| viral-hooks | `/content-factory:viral-hooks` | Generates and critiques three-layer hook hypotheses without fake algorithm guarantees. |
+| viral-captions-and-ctas | `/content-factory:viral-captions-and-ctas` | Audits captions, CTAs, on-screen text, hashtags, and pinned comments against objective and delivery proof. |
+| content-performance-review | `/content-factory:content-performance-review` | Reviews Metricool performance at 24 hours and 7 days, then proposes one controlled next experiment. |
 
 ## Important: external dependencies
 
-These Skills were authored inside Daniel's private `content` repo. The SKILL.md
-instructions reference helper scripts and files that live in that repo, not in
-this plugin - for example `scripts/generate-image.mjs`, `scripts/daily-reel/`,
-`tools/open-carrusel/`, `design/lessons.md`, `design/DESIGN.md`, and
-`content-system/pipeline.md`, plus a `GEMINI_API_KEY_CAROUSEL` Keychain secret
-and a Metricool MCP.
+These skills can run as guidance on their own. Full automation still needs the
+consumer's content repo, renderer scripts, design files, media host, secrets,
+and Metricool connector. The plugin never bundles credentials or assumes a
+specific local filesystem.
 
 On a fresh machine the skills load and give full guidance, but the automation
 steps that shell out to those scripts or read those design files will not run
@@ -52,13 +55,13 @@ The skills were genericized for publishing. Substitute these for your own setup:
 
 | Placeholder | Meaning |
 |---|---|
-| `<content-repo>` | your local content working directory |
+| `<content-repo>` | local content working directory |
 | `<website-repo>` | the repo that serves your guide pages |
 | `<your-domain>` | the domain guide pages are published on |
 | `<METRICOOL_BLOG_ID>` | your Metricool brand/blog id |
 | `<your-handle>` / `<your-brand>` | your Instagram handles |
 | `<CHROME_PROFILE>` | the Chrome profile logged into your IG |
-| `<macos-user>` | your macOS username (Keychain lookups) |
+| `<macos-user>` | macOS username, only if your own scripts use Keychain |
 | `<host>` | the remote host running the CTA automation |
 
 ## License
