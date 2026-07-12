@@ -1,7 +1,7 @@
 # Hook archetypes
 
-The named frameworks worth knowing, what they do well, when to reach for
-each, and how to combine them. Treat these as starting shapes, not laws.
+Named creator frameworks summarized as historical inspiration. Treat them as
+starting shapes, not platform laws or verified causal claims.
 Mix them. The goal is variety across a batch, not purity within a single
 hook.
 
@@ -23,17 +23,13 @@ rewording a single idea six times.
 4. **Magician.** "Look at this. That's actually a [surprise]." Lets the
    visual carry the hook. The verbal line is a pointer, not the payload.
 5. **Investigator.** "I found a [hidden thing] in [familiar place] that
-   does [unexpected thing]." Strong baseline. More posts in the okay-to-
-   good range, fewer absolute flops than the more polarizing archetypes.
+   does [unexpected thing]." Useful when discovery itself is real proof.
 6. **Contrarian.** "Everyone thinks [X] because [Y]. They're wrong, and
-   here's what's actually happening." Highest peak performance,
-   highest variance. The payoff has to defend the claim or the trust
-   collapses.
+   here's what's actually happening." Polarizing by design. The payoff has
+   to defend the claim or trust collapses.
 
-Pattern across datasets: Contrarian goes biggest when it lands.
-Investigator is the safer baseline that hits more often. If a batch
-has both, the user has high-ceiling and reliable shots in the same
-pitch.
+Test contrasting archetypes against the same account and format. Do not import a
+creator's claimed performance ranking without the underlying comparable dataset.
 
 ## MrBeast: match the promise, then escalate
 
@@ -47,11 +43,9 @@ Practical rules pulled from the memo:
 - Engineer the opening sentence to be a direct echo of the title's
   promise. If the title says "I survived 100 hours in a cave," the
   first line is inside the cave, not in a studio.
-- Escalate immediately. Stakes go up in the first minute. Do not ramp,
-  do not warm up.
-- Treat the first minute as the most important section of the video.
-  Most dropoff happens here. Spend the disproportionate planning time
-  on the opener.
+- Establish the promised situation promptly, then escalate without unnecessary
+  warm-up.
+- Inspect the video's retention curve to decide where planning effort belongs.
 
 This is a long-form discipline, but the short-form version is the same
 contract on a smaller scale: the first frame matches the first line
@@ -59,9 +53,9 @@ matches the on-screen text matches what the video actually delivers.
 
 ## Alex Hormozi: hook, retain, reward
 
-Three-stage shape for every short.
+Three-stage diagnostic shape.
 
-- **Hook (under 3 seconds).** A bold statement, a surprising number, or
+- **Hook (brief opening beat).** A bold statement, a proven number, or
   a pain-point question. Lead with what hurts or what's at stake for
   the viewer.
 - **Retain.** Hold the viewer with concrete content and proof. No
@@ -80,8 +74,8 @@ sentence the viewer believes.
 
 ## Russell Brunson and Frank Kern: hook, story, offer
 
-Direct-response shape. Best for paid social and identity-led plays
-where the viewer is already warm.
+Direct-response shape to test for paid social and identity-led work where the
+viewer already understands the problem.
 
 - **Hook.** A pattern interrupt that stops the scroll. Often a bold
   claim, a counterintuitive line, or a visual jolt.
@@ -89,15 +83,15 @@ where the viewer is already warm.
   thing being sold.
 - **Offer.** The explicit ask.
 
-When an ad underperforms, the diagnosis is always one of the three.
+When an ad underperforms, these are three useful diagnostic areas, not exhaustive causes.
 The hook gets the click. The story earns the trust. The offer closes
 the loop. On cold organic audiences, this shape can read pitchy in
 the first two seconds, so it usually needs softening at the front.
 
 ## Dan Koe: APAG (attention, perspective, advantage, gamify)
 
-The Attention stage is the hook. On short-form it lives in the first
-second, the first slide, or the first line of on-screen text. Koe's
+The Attention stage is the hook. On short-form it lives in opening beat,
+first slide, or first on-screen line. Koe's
 three filters for whether attention will continue:
 
 - **Relevance.** Does this tie to the viewer's daily life?
@@ -108,7 +102,7 @@ three filters for whether attention will continue:
 
 Tactics he leans on: short opening sentences. Specific numbers only when
 they come from real measurement. Explicit pain
-callouts so the viewer recognizes themselves in the first second.
+callouts so right viewer recognizes relevance quickly.
 
 ## Justin Welsh: the three-line hook
 
@@ -146,16 +140,14 @@ winners into full videos. Hooks pretest the idea.
 
 Two related claims worth applying as one system.
 
-- **The first three seconds decide.** His Shorts teardowns put the
-  retention difference between break-out and flop in the first three
-  seconds, not later.
+- **Inspect early retention.** Opening drop-off can reveal packaging mismatch,
+  but no universal three-second breakout threshold exists.
 - **Click-to-unpause.** The thumbnail or first frame depicts a scene
   mid-action, so the viewer's instinct is to play to see what happens
   next. Compose the opening frame as if it has just been paused.
 
-The split he names: the thumbnail and title sell the click. The first
-thirty seconds sell the watch. Everything after that is the show. The
-hook is a system that spans both sides of the click.
+Historical framing: thumbnail and title sell click; opening validates promise.
+Exact window depends on format, audience, and video length.
 
 ## Choosing the right archetype for an idea
 

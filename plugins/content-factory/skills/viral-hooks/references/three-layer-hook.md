@@ -1,7 +1,7 @@
 # The three-layer hook
 
-Every short-form hook runs three things in parallel during the first 1
-to 2 seconds: a visual layer (what the eye sees), a verbal layer (what
+Every short-form hook can run three things in parallel during opening beat:
+a visual layer (what the eye sees), a verbal layer (what
 the voice says), and a text layer (what the on-screen caption asserts).
 The strongest hooks have all three pointing at the same idea. A clever
 spoken line on a flat first frame is half a hook.
@@ -12,16 +12,12 @@ acts as the timing cue that locks the other three together.
 
 ## Why all three matter
 
-- Many short-form views happen without useful audio. If the verbal hook
-  carries the whole promise and there's no caption, most viewers see a
-  silent face and swipe.
-- The eye registers a visual before the brain finishes parsing a
-  spoken sentence. Pre-attentive processing fires inside the first
-  half-second. The first frame has to do work before the first
-  syllable lands.
-- Captions tend to lift completion on short-form by a measurable
-  amount versus the same video without them. Treat captions as
-  required, not optional polish.
+- Some viewers watch without useful audio. Visual and text layers should preserve
+  core promise when mute consumption matters for target surface.
+- First frame is available before full spoken sentence lands, so it should carry
+  useful information.
+- Captions improve accessibility and comprehension. Measure performance effect
+  instead of claiming universal completion lift.
 
 ## The visual layer
 
@@ -49,9 +45,8 @@ is the face, your visual hook isn't doing work yet.
 
 What the voice says.
 
-- **Five to ten words.** Short enough to land before second 2. The
-  spoken line is also indexed for search on most platforms, so it
-  doubles as discovery copy.
+- **Brief natural line.** Shorten until it lands cleanly without losing truth or
+  human cadence. Verify platform search behavior before calling speech discovery copy.
 - **Lead with the payoff or the stake.** "Your $300 coffee setup is
   why it tastes worse" lands. "Hey everyone, today I want to talk
   about coffee" doesn't.
@@ -68,8 +63,7 @@ What the voice says.
 
 What the caption asserts in the first frame.
 
-- **Three to seven words.** Long captions don't read in the first
-  second.
+- **Glanceable text.** Validate at phone scale; no universal word count.
 - **Sharpens, doesn't repeat.** If the voice says "I spent four
   hundred dollars on coffee gear," the text doesn't repeat the
   sentence. It says "$400 burned." It compresses, escalates, or

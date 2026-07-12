@@ -5,6 +5,10 @@ def test_accepts_spoken_hebrew_without_mechanical_traps():
     assert check_copy("בנו סוכן שעובד בשבילכם\nכתבו DESIGN ואשלח את הצ'קליסט") == []
 
 
+def test_accepts_bidi_isolated_ai_token():
+    assert check_copy("זה <bdi dir=\"ltr\">AI</bdi> שעובד") == []
+
+
 def test_rejects_em_dash_generic_share_cta_and_inline_ai():
     errors = check_copy("זה AI — שתפו עם מישהו שצריך את זה")
     assert any("em dash" in error for error in errors)

@@ -6,10 +6,10 @@ it as one. See `references/caption-craft.md` for the rules.
 ## Instagram (Reels and posts)
 
 ```
-VISIBLE LINE (≤ ~125 chars, the headline):
+VISIBLE LINE (verify current preview; treat as headline):
 [lead with payoff or tension. one primary keyword, early.]
 
-BODY (optional, keeps total under ~150 chars unless story-led):
+BODY (optional, length follows story need and current platform limit):
 [context, payoff, or where to go next. do not echo the visible line.]
 
 PRIMARY KEYWORD: [used once, in the visible line]
@@ -17,20 +17,20 @@ SECONDARY TERMS (1–2, woven in naturally):
   - [term 1]
   - [term 2]
 
-HASHTAGS (small relevant set, the creator cap <=6):
+HASHTAGS (small relevant set; use configured brand cap if one exists):
   #[niche-tag] #[niche-tag] #[niche-tag] #[niche-tag]
 
 PRIMARY ACTION (one): [send / save / comment with stance / watch full]
-CTA PLACEMENT: [layered: implicit at ~70%, explicit close]
+CTA PLACEMENT: [after value / closing / named experiment]
 ```
 
 ## TikTok
 
 ```
-VISIBLE LINE (≤ ~80 chars, the headline):
-[hook tension or payoff. keyword in the first 100–150 chars.]
+VISIBLE LINE (verify current preview; treat as headline):
+[hook tension or payoff. place topic language naturally.]
 
-BODY (optional, total 50–150 chars):
+BODY (optional, length follows story need and current platform limit):
 [context or second hook. avoid echoing the on-screen text.]
 
 PRIMARY KEYWORD: [used once, early]
@@ -43,31 +43,31 @@ HASHTAGS (small relevant set, verify current behavior):
   (optional: 1 topical/trending tag if it genuinely fits)
 
 PRIMARY ACTION (one): [save / send / reply-with-video / comment stance]
-CTA PLACEMENT: [5s before known drop-off, or around the 70% mark]
+CTA PLACEMENT: [after value / closing / named experiment]
 ```
 
 ## YouTube Shorts
 
 ```
-TITLE (≤ 100 chars, only ~40 visible on the tile):
-[hook with the primary keyword in the first 40 chars]
+TITLE (verify current limit and preview):
+[accurate title with natural topic language]
 
-DESCRIPTION (first 100–125 chars are the only ones above the fold):
+DESCRIPTION (verify current preview behavior):
 [hook restated, payoff or context, secondary keywords]
 
-[rest of description, 5,000 char cap if needed]
+[rest of description within current documented limit]
 
-PRIMARY KEYWORD: [in title and in first 125 chars of description]
+PRIMARY KEYWORD: [natural placement in title or description]
 SECONDARY TERMS (1–2):
   - [term 1]
   - [term 2]
 
 HASHTAGS (optional, relevant only):
   #[niche-tag] #[niche-tag]
-  (#Shorts optional; more than 60 hashtags makes YouTube ignore all)
+  (verify current Shorts and hashtag behavior before publishing)
 
 PRIMARY ACTION (one): [cliffhanger to long-form / save / send]
-CTA PLACEMENT: [layered: tease at 70%, explicit redirect at close]
+CTA PLACEMENT: [after standalone value, then accurate redirect]
 ```
 
 ## Quick reuse checklist

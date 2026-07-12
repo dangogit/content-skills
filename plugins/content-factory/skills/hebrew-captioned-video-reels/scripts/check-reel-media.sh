@@ -12,6 +12,11 @@ if [[ ! -f "$file" ]]; then
   exit 2
 fi
 
+if ! command -v ffprobe >/dev/null 2>&1; then
+  echo "missing dependency: ffprobe" >&2
+  exit 2
+fi
+
 probe="$(ffprobe -v error -show_entries stream=codec_type,codec_name,width,height,channels:format=duration -of default=nw=1 "$file")"
 printf '%s\n' "$probe"
 
@@ -23,8 +28,8 @@ grep -q '^codec_type=audio$' <<<"$probe" || { echo "FAIL: no audio stream" >&2; 
 grep -q '^codec_name=aac$' <<<"$probe" || { echo "FAIL: audio is not AAC" >&2; exit 1; }
 
 duration="$(awk -F= '/^duration=/{print $2}' <<<"$probe")"
-awk -v d="${duration:-0}" 'BEGIN { if (d <= 0 || d >= 180) exit 1 }' || {
-  echo "FAIL: duration must be greater than 0 and under 180 seconds" >&2
+awk -v d="${duration:-0}" 'BEGIN { if (d <= 0 || d > 180) exit 1 }' || {
+  echo "FAIL: duration must be greater than 0 and at most 180 seconds" >&2
   exit 1
 }
 

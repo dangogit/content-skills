@@ -10,7 +10,7 @@ metadata:
 
 # Captions and CTAs
 
-Framework layer only. Do not override `content-system/pipeline.md`, the creator's Hebrew voice, live CTA automation, or Metricool publishing rules.
+Framework layer only. Do not override a configured project pipeline, the creator's Hebrew voice, live CTA automation, or publishing rules.
 
 ## When to Use
 
@@ -35,7 +35,8 @@ Do not use this skill to choose topic, story role, proof, schedule, or publish s
 2. Caption adds context or payoff. It may echo the promise, but must not blindly duplicate on-screen copy.
 3. Comment-keyword CTAs are allowed when they request a real resource or response, name the artifact, and route to a live automation. They are not automatically engagement bait.
 4. Reject meaningless bait: fake urgency, forced likes, numbered tagging requests, empty `YES` comments, or a promised resource that is not delivered first.
-5. For the creator's account, guide CTAs use keyword comment plus DM delivery. Never replace that with a public resource URL unless the creator explicitly asks.
+5. For configured keyword-resource flows, use comment plus one requested DM delivery.
+   Do not assume every account uses this funnel or turn it into unrelated outreach.
 6. Hashtags are optional metadata, not a reach guarantee. Use only relevant tags and verify current platform limits before publishing.
 7. Do not invent metrics, rankings, audience numbers, or platform penalties. Mark claims as hypothesis, source them, or remove them.
 8. Hebrew lines start with Hebrew where possible. Isolate short Latin tokens with `<bdi dir="ltr">` or place them on their own line. Never put inline `AI` in a Hebrew line.
@@ -54,19 +55,24 @@ Do not use this skill to choose topic, story role, proof, schedule, or publish s
 Run the mechanical packet gate before handoff:
 
 ```bash
-python3 scripts/check_caption_packet.py <copy.md>
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/viral-captions-and-ctas/scripts/check_caption_packet.py" <copy.md>
 ```
 
 ## Output
 
 Return:
 
-- Caption variants by platform.
-- Primary objective and CTA rationale.
-- On-screen text brief with safe-zone placement.
-- Hashtag set, or explicit reason for none.
-- Pinned comment or first-comment plan.
-- Risk flags and required proof.
+```markdown
+# Caption And CTA Packet
+Objective: <one objective>
+Caption: <inline copy or reviewed asset path>
+CTA: <one action or none>
+CTA rationale: <why this action fits objective>
+On-screen text: <copy and safe-zone placement>
+Hashtags: <small relevant set or none>
+Pinned comment: <copy or none>
+Risk flags: <none or exact unresolved proof/policy issue>
+```
 
 ## Resources
 

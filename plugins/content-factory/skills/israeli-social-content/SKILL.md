@@ -22,7 +22,8 @@ Localize strategy and copy for Israeli audiences. This skill does not choose top
 - Approved idea, story role, and proof.
 - Current Metricool planner and account analytics when timing matters.
 - Current official platform documentation for limits, labels, and formats.
-- `content-system/pipeline.md`, ledger, and the creator positioning lock.
+- Consumer project pipeline and ledger when configured; otherwise an explicit
+  objective, recent-content summary, duplicate check, and brand positioning.
 
 ## Workflow
 
@@ -30,7 +31,7 @@ Localize strategy and copy for Israeli audiences. This skill does not choose top
 
 Keep original claim, proof, and promise. Do not add Israeli stereotypes, invented slang, unsupported statistics, or generic local references.
 
-### Step 2: Rewrite In the creator's Hebrew
+### Step 2: Rewrite In Creator Voice
 
 - Spoken, direct, second-person Hebrew.
 - Prefer the creator's accepted phrases from transcripts and feedback.
@@ -58,7 +59,7 @@ Keep original claim, proof, and promise. Do not add Israeli stereotypes, invente
 
 ### Step 5: Adapt Platform Surface
 
-- Instagram, Facebook, TikTok, and YouTube all belong in the creator's current distribution mix.
+- Adapt only networks configured or requested for this asset.
 - Preserve one core promise while adapting title, caption, and media requirements.
 - Do not hardcode posting frequency, best time, ideal length, hashtag count, or network mix.
 - Do not claim Hebrew always outperforms English without account evidence.
@@ -73,7 +74,7 @@ Keep original claim, proof, and promise. Do not add Israeli stereotypes, invente
 Run the mechanical copy gate before handoff:
 
 ```bash
-python3 .claude/skills/israeli-social-content/scripts/check_hebrew_copy.py <copy.md>
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/israeli-social-content/scripts/check_hebrew_copy.py" <copy.md>
 ```
 
 It catches em dashes, generic share CTAs, and inline `AI` mixed into Hebrew.
@@ -86,7 +87,7 @@ platform-policy verification.
 # Israeli Localization Review
 
 Localized copy:
-the creator voice check:
+Creator voice check:
 RTL risks:
 Latin-token treatment:
 Calendar risks:
@@ -96,16 +97,16 @@ Unsupported claims removed:
 
 ## Resources
 
-- `references/locale-checklist.md` - concise localization and policy checklist.
-- `references/israeli-social-platforms.md` - directional audience context with methodology caveats.
-- `evidence.json` - dated claim registry with confidence and expiry.
-- `content-system/copy-stack.md` - project copy sequence.
-- `design/lessons.md` - the creator-specific Hebrew and RTL rules.
+- `${CLAUDE_PLUGIN_ROOT}/skills/israeli-social-content/references/locale-checklist.md` - concise localization and policy checklist.
+- `${CLAUDE_PLUGIN_ROOT}/skills/israeli-social-content/references/israeli-social-platforms.md` - directional audience context with methodology caveats.
+- `${CLAUDE_PLUGIN_ROOT}/skills/israeli-social-content/evidence.json` - dated claim registry with confidence and expiry.
+- Configured `pipeline_path`, `ledger_path`, and `design_lessons_path` when present.
+- `${CLAUDE_PLUGIN_ROOT}/references/configuration.md` - optional project paths.
 
 ## Key Principles
 
 1. Locale layer does not replace editorial strategy.
-2. the creator's spoken phrasing beats generic Israeli slang.
+2. Creator's spoken phrasing beats generic Israeli slang.
 3. RTL correctness is production requirement.
 4. Account analytics beat hardcoded timing.
 5. Platform policy claims expire and require verification.

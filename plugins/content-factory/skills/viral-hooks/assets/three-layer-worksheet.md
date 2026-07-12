@@ -15,15 +15,15 @@ OBJECTIVE:           (reach / retention / authority / conversion)
 PROOF SOURCE:
 
 ────────────────────────────────────────────────────────────────────────
-LAYER          | CONTENT                              | LANDS BY
+LAYER          | CONTENT                              | REVIEW POINT
 ────────────────────────────────────────────────────────────────────────
-VISUAL         | [WHAT THE FIRST FRAME SHOWS]         | second 0
+VISUAL         | [WHAT THE FIRST FRAME SHOWS]         | paused frame
                | [WHY IT WORKS PAUSED]                |
 ────────────────────────────────────────────────────────────────────────
 VERBAL         | [NATURAL SPOKEN LINE]                 | early
                | [POWER VERB? CONCRETE NOUN?]         |
 ────────────────────────────────────────────────────────────────────────
-ON-SCREEN TEXT | [3-7 WORDS, BIG AND BOLD]            | second 0-1
+ON-SCREEN TEXT | [GLANCEABLE, BIG, READABLE]           | opening beat
                | [COMPRESSES VERBAL, DOESN'T REPEAT]  |
 ────────────────────────────────────────────────────────────────────────
 AUDIO          | [VOICE / MUSIC / SILENCE IF USEFUL]  | aligned beat
@@ -40,9 +40,8 @@ Before shooting, run all four:
       doing too little.
 - [ ] **Eyes-away test.** Cover the visual. Does the spoken line pull
       a glancing viewer back? If no, the verbal hook is too soft.
-- [ ] **Glance test.** Look at the frame for half a second, then look
-      away. Did the on-screen text register? If not, it's too long or
-      too small.
+- [ ] **Glance test.** View at phone scale briefly. Did text register? If not,
+      shorten, enlarge, or improve contrast.
 - [ ] **Alignment test.** Do all three layers point at the same idea,
       or are they three different hooks competing? If competing, pick
       the strongest and align the other two to it.
@@ -60,10 +59,10 @@ Before shooting, run all four:
 
 ## After shooting
 
-Watch the first 3 seconds back without context. Ask:
+Watch opening beat back without context. Ask:
 
-- Did the hook resolve by second 3?
-- Would a stranger swipe in the first half-second?
+- Is relevance or stake clear quickly enough for this format?
+- Does first frame give right viewer a reason to continue?
 - If two viewers watched (one with sound, one muted), would both get
   the hook?
 

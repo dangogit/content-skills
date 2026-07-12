@@ -23,10 +23,12 @@ Turn an approved content idea into a clear short-form story. Generate testable c
 
 ## Prerequisites
 
-- Read `content-system/pipeline.md` and complete State Sync.
-- Read `content-system/content-ledger.md` and current Metricool planner state.
+- Read configured pipeline and ledger files when present and complete their State
+  Sync. Otherwise collect recent assets, duplicate risk, current planner status,
+  and story-role sequence in the packet.
 - Start from an approved idea card with audience, objective, story role, proof, and duplicate risk.
-- For the creator's brand, keep topic inside Claude Code, Codex, agents, skills, MCP, memory, reliability, and operator workflows unless explicitly overridden.
+- Read configured brand positioning. If absent, preserve user's stated niche and ask
+  before introducing a different topic domain.
 
 ## Workflow
 
@@ -49,7 +51,7 @@ Require:
 Recognizable situation
 Concrete damage or stake
 Surprising cause
-the creator proof or source-backed proof
+Creator proof or source-backed proof
 Named method or artifact
 Visible payoff
 One next action
@@ -122,7 +124,7 @@ Change one main variable per test when possible.
 Run the mechanical packet gate before handoff:
 
 ```bash
-python3 scripts/check_story_packet.py <story-packet.md>
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/viral-short-form/scripts/check_story_packet.py" <story-packet.md>
 ```
 
 ## Output Format
@@ -164,7 +166,8 @@ Baseline:
 - `references/platforms.md` - current-doc and analytics verification checklist.
 - `references/metrics-honesty.md` - objective-aware measurement.
 - `assets/script-template.md` - script packet template.
-- `assets/carousel-outline.md` - generic outline, subordinate to repo carousel pipeline.
+- `assets/carousel-outline.md` - generic outline, subordinate to any configured
+  project carousel pipeline.
 - `scripts/check_story_packet.py` - mechanical story-packet gate.
 
 ## Key Principles
@@ -173,4 +176,4 @@ Baseline:
 2. Proof beats generic authority language.
 3. Objective decides metric.
 4. Platform claims require current verification.
-5. the creator's analytics override creator folklore.
+5. Creator analytics override creator folklore.

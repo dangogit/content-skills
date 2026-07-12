@@ -2,7 +2,8 @@
 
 Fill this in for a single vertical video. Keep the audio column tight (people
 talk faster than they read), and make the on-screen text reinforce the spoken
-line instead of repeating it. Aim for a cut/reset every 2-3 seconds.
+line instead of repeating it. Reset visuals when story beat or comprehension
+benefits, not on a fixed timer.
 
 ```
 WORKING TITLE:
@@ -14,9 +15,9 @@ TARGET LENGTH:     (sec, based on story need or named experiment)
 ──────────────────────────────────────────────────────────────────────
 TIME   | SPOKEN / AUDIO                  | ON-SCREEN TEXT        | VISUAL / SHOT
 ──────────────────────────────────────────────────────────────────────
-0-3s   | HOOK (lead with payoff/stake)  | hook sharpened, big   | proof/conflict/face
+OPEN   | HOOK (lead with payoff/stake)  | hook sharpened, big   | proof/conflict/face
        |                                |                       |
-3-Xs   | ESCALATION beat 1              | key phrase            | reset shot/angle
+NEXT   | ESCALATION beat 1              | key phrase            | reset shot/angle
        | (raise tension / specificity)  |                       |
        | ESCALATION beat 2              |                       | reset shot/angle
        |   ↑ use "but / therefore"      |                       |

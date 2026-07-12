@@ -4,15 +4,13 @@ Choose CTA from declared objective. Sends, saves, meaningful comments,
 qualified keyword comments, and continued viewing serve different jobs.
 One primary ask per video. Do not claim one action has universal algorithmic weight.
 
-## The hierarchy of asks
+## Map asks to objective
 
 Map actions to intent:
 
-1. **Send to a specific person** (DM share). The heaviest signal on
-   Instagram in particular. Mosseri has called it out as the action
-   weighed most for cold reach.
-2. **Save**. Strong on save-driven formats (tutorials, lists, how-tos).
-3. **Watch-to-end and rewatch**. Earned by structure (loops, payoff
+1. **Send to a specific person** when recommendation naturally helps them.
+2. **Save** for reusable formats such as tutorials, lists, or checklists.
+3. **Watch-to-end and rewatch** are earned by structure (loops, payoff
    placement), not by asking. The closest CTA is the cliffhanger to a
    longer video.
 4. **Comment with a stance**. Real opinion on a debate-worthy topic.
@@ -33,9 +31,9 @@ Pick one. Earn the action.
 
 ## Send-driving CTAs
 
-Recipient-naming is the move. Generic "share with friends" reads as bait.
+Recipient-naming may make recommendation concrete. Generic "share with friends" reads as bait.
 "Send to your sister who keeps buying the wrong serum" reads as a real
-recommendation, and the heavy DM signal tends to follow.
+recommendation. Measure sends rather than claiming fixed ranking weight.
 
 Patterns:
 
@@ -51,8 +49,7 @@ to anyone you love". The numbers and the vagueness tip it into bait.
 
 ## Save-driving CTAs
 
-Saves are one of the few cases where an explicit ask correlates with
-the metric. Best on content the viewer might actually need later.
+Save ask fits content viewer might need later. Test explicit versus implicit ask.
 
 Patterns:
 
@@ -63,8 +60,7 @@ Patterns:
   middle of the video.
 
 The trick is naming the **specific future moment** the save pays off.
-Generic "save for later" lifts less than "save for the next time you
-panic at a restaurant menu".
+Specific future moment gives clearer reason than generic "save for later"; measure effect.
 
 ## Comment CTAs that aren't bait
 
@@ -81,13 +77,13 @@ is the content.
 
 ## Comment-to-DM CTAs
 
-the creator's content uses keyword comments as resource requests. Do not reject this
+Configured accounts may use keyword comments as resource requests. Do not reject
 mechanism automatically. Require:
 
 - named artifact, not generic "guide";
 - exact keyword with collision check;
 - live guide URL;
-- active local and <cta-host> route;
+- active local and configured-host route;
 - clean health and synthetic dry-run proof;
 - DM delivers promised resource before any pitch.
 
@@ -96,9 +92,8 @@ engagement demands, deceptive delivery, or multi-ask spam.
 
 ## Cliffhanger to long-form
 
-The most useful CTA on Shorts. Deliver about 60% of the answer in
-the Short, cut at the curiosity peak, and point to the long-form for
-the rest.
+Useful option when Short genuinely previews long-form. Deliver enough standalone
+value, then state what additional value long-form contains. No fixed percentage.
 
 - Tease, don't tease-only. The Short still has to feel satisfying. Pure
   tease without value reads as an ad and viewers swipe.
@@ -112,35 +107,26 @@ the rest.
 End-card CTAs assume completion, but most viewers exit before the final
 frame. Practical pattern:
 
-- **Layered**: a light implicit prompt at the 70% mark ("if you're
-  saving these..."), plus an explicit closing prompt.
-- **Data-driven version**: open Insights or Analytics, find the actual
-  drop-off point, and place the primary CTA about 5 seconds before it.
+- **Layered hypothesis**: light contextual prompt before close plus one explicit ask.
+- **Data-driven version**: inspect actual drop-off and test CTA placement before,
+  during, or after value moment.
 - For loops and rewatches, the closing CTA can be a line that loops
   back to the hook, so the rewatch is the CTA.
 
 ## The "follow for more" backfire
 
-Generic "follow" / "like" / "double-tap" CTAs:
+Generic "follow" / "like" / "double-tap" CTAs may:
 
-- Pattern-match as engagement bait.
-- Spend closing-second real estate on a low-weight action.
-- Convert poorly on Shorts specifically. The viewer is in the feed,
-  one swipe from the next video. Subscribe-rate from a viral Short
-  tends to run roughly 10x to 100x lower than from long-form on the
-  same view count.
-- Viewers who liked the content tend to follow on their own from a
-  profile visit. They follow the work, not the ask.
+- read as engagement bait when vague;
+- consume attention needed for payoff;
+- underperform another action for current objective.
 
-Use that closing real estate for a send or save prompt instead.
+Test follow, send, save, watch-through, or no CTA against objective.
 
 ## Open question vs instruction
 
-Open questions ("what would you have done?") drive comment volume but
-rarely beat instruction CTAs ("save this before your next trip") on
-the metric that lifts reach (saves and sends). Use open questions when
-the topic is genuinely debate-worthy. Default to instruction CTAs tied
-to the content's utility.
+Open questions fit genuinely debate-worthy topics. Instruction CTAs fit reusable
+utility. Choose by objective; do not claim one action universally lifts reach.
 
 ## Multiple CTAs in one breath
 
@@ -161,6 +147,7 @@ common rewrites:
   for example "כתבו ROUTE ואשלח לכם את חוק הברזל למודל". Ship only with active route.
 - "Tag a friend" → "send this to the one friend who [specific
   situation]."
-- "Follow for more X tips" → cut it. Replace with a save or send.
+- "Follow for more X tips" → make promise specific when follower growth is objective;
+  otherwise choose action tied to payoff.
 - "Like if you agree" → cut it.
 - "Share this with everyone" → "send this to your [specific person]."

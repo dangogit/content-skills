@@ -19,9 +19,13 @@ remain supplied by the consumer's content repo.
 
 ## Prerequisites
 
-- State Sync completed in `<content-repo>`.
+- State Sync completed using the configured pipeline and ledger when present. If
+  absent, record recent assets, duplicate risk, objective, proof, and planner
+  status directly in the handoff packet.
 - Approved idea card with objective, audience, promise, story role, proof, and duplicate check.
-- Current design system, lessons, and platform constraints read.
+- Configured design system and lessons read when present; otherwise record the
+  supplied brand, accessibility, dimensions, and safe-zone constraints.
+- Media sources, likenesses, logos, screenshots, and generated assets cleared for intended use.
 - No scheduling or publishing without explicit current-turn approval.
 
 ## Workflow
@@ -36,7 +40,7 @@ similarity check, schedule intent, and current planner status.
 - Maximum ten slides: hook, re-hook, body, proof, payoff, CTA or recap.
 - One focal line and one visual anchor per body slide.
 - Use spoken Hebrew. Keep Latin tokens isolated for RTL safety.
-- Use Tadam copy and visual prompt passes when available.
+- Use consumer-configured copy and visual review prompts when available.
 - Resolve factual flags before image generation.
 
 ### Step 3: Build Visual Blueprint
@@ -49,6 +53,8 @@ fallback is allowed when generated Hebrew fails.
 
 Export review assets at 1080x1350. Inspect every slide at phone scale for Hebrew
 spelling, bidi order, contrast, object collisions, safe zones, and text budget.
+Record source or license for every non-original asset. Apply current AI-content
+disclosure rules when final visuals require them.
 
 ### Step 5: Run CTA Gate
 
@@ -64,7 +70,7 @@ auto-publish state. Never silently drop a rejected network.
 Run packet validation:
 
 ```bash
-python3 scripts/check_carousel_packet.py <packet.md>
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/carousel/scripts/check_carousel_packet.py" <packet.md>
 ```
 
 ## Output
@@ -86,8 +92,9 @@ Next action:
 
 ## Resources
 
-- `references/carousel-qa.md` - slide, safe-zone, copy, and scheduling acceptance criteria.
+- `${CLAUDE_PLUGIN_ROOT}/skills/carousel/references/carousel-qa.md` - slide, safe-zone, copy, and scheduling acceptance criteria.
 - `scripts/check_carousel_packet.py` - mechanical handoff gate.
+- `${CLAUDE_PLUGIN_ROOT}/references/configuration.md` - public configuration contract.
 - `carousel-with-face` - selected face-slide delta layer.
 - `carousel-guide` - named-resource delivery gate.
 

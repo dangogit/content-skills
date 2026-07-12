@@ -1,6 +1,6 @@
 ---
 name: reel
-description: Route talking-head Reel requests to the canonical Hebrew captioned-video workflow. Use for raw video, captions, hook, music, correction, or Metricool scheduling.
+description: Legacy compatibility alias for `/content-factory:reel`. Use only when user explicitly invokes this alias; general Reel requests should trigger `hebrew-captioned-video-reels` directly.
 ---
 
 # Reel Compatibility Router
@@ -13,9 +13,11 @@ quick overlay shortcuts from bypassing caption, audio, CTA, or planner QA.
 
 ## When to Use
 
-- User asks to make, caption, edit, correct, or schedule a Reel.
-- Raw talking-head or podcast video needs production.
-- Existing scheduled Reel needs exact-target replacement.
+- User explicitly invokes `/content-factory:reel`.
+- Older documentation or automation still references this alias.
+
+For automatic routing, prefer `hebrew-captioned-video-reels`. This alias exists
+only to preserve older invocation links.
 
 ## Prerequisites
 
@@ -34,7 +36,7 @@ quick overlay shortcuts from bypassing caption, audio, CTA, or planner QA.
 Run handoff validation:
 
 ```bash
-python3 scripts/check_reel_handoff.py <handoff.md>
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/reel/scripts/check_reel_handoff.py" <handoff.md>
 ```
 
 ## Output

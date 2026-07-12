@@ -14,6 +14,11 @@ FORBIDDEN = (
     "שתפו עם מישהו שצריך את זה",
 )
 
+SAFE_INLINE_AI = re.compile(
+    r"<bdi\b[^>]*\bdir=[\"']ltr[\"'][^>]*>\s*AI\s*</bdi>|`AI`",
+    flags=re.IGNORECASE,
+)
+
 
 def check_copy(text: str) -> list[str]:
     errors: list[str] = []
@@ -24,7 +29,8 @@ def check_copy(text: str) -> list[str]:
         if phrase.casefold() in lower:
             errors.append(f"uses generic share CTA: {phrase}")
     for line_no, line in enumerate(text.splitlines(), 1):
-        if re.search(r"[\u0590-\u05ff]", line) and re.search(r"\bAI\b", line):
+        unsafe_line = SAFE_INLINE_AI.sub("", line)
+        if re.search(r"[\u0590-\u05ff]", unsafe_line) and re.search(r"\bAI\b", unsafe_line):
             errors.append(f"line {line_no} mixes inline AI with Hebrew")
     return errors
 

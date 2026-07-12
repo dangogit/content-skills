@@ -8,7 +8,8 @@ common failure modes, see `references/hook-anti-patterns.md`.
 
 ## Core pass-fail
 
-- [ ] **Lands in under 2 seconds** when said out loud. Time it.
+- [ ] **Lands quickly and naturally** when said out loud. Time it and compare
+      against account baseline instead of enforcing universal duration.
 - [ ] **Leads with the payoff or the stake**, not setup, brand, or
       autobiography.
 - [ ] **Has a concrete noun, proven number, or named stake** in the first
@@ -24,15 +25,15 @@ common failure modes, see `references/hook-anti-patterns.md`.
       even with no sound and no caption.
 - [ ] **Verbal hook works without the visual.** A muted viewer who
       looks up should still get pulled in by the spoken line.
-- [ ] **On-screen text is 3 to 7 words** and sharpens (not repeats)
-      the verbal line.
+- [ ] **On-screen text passes a phone glance test** and sharpens rather than
+      repeats the verbal line.
 - [ ] **All three layers point at the same idea.** No misalignment.
 
 ## Targeting and resonance
 
-- [ ] **Targeted enough that the right viewer feels "this is for me"**
-      in the first second.
-- [ ] **The hook resolves by second 3.** Not a mini-video unto itself.
+- [ ] **Targeted enough that the right viewer recognizes relevance** in the
+      opening beat.
+- [ ] **Opening gives a qualified reason to continue.** Body still owns payoff.
 - [ ] **It's distinct from the other hooks in the batch.** A different
       archetype, not a different wording.
 
@@ -42,7 +43,8 @@ common failure modes, see `references/hook-anti-patterns.md`.
 - [ ] **No "hey guys" or "today we're going to talk about."**
 - [ ] **No vague tease without a defined shape.**
 - [ ] **No subscribe ask before any value lands.**
-- [ ] **No story opener on TikTok.** ("Let me tell you about the time…")
+- [ ] **No slow story preamble.** Story openers are valid when conflict or stake
+      is immediately clear.
 - [ ] **No imperative command** ("stop scrolling") unless the payoff
       earns the urgency.
 
@@ -50,9 +52,9 @@ common failure modes, see `references/hook-anti-patterns.md`.
 
 - Add a number only when real evidence proves it.
 - Record proof source beside every number and authority claim.
-- Add an authority signal in the first half-second.
+- Add visible proof or relevant credibility when objective needs it.
 - Name the exact viewer.
-- Cut the first three words. Most hooks bury the lede.
+- Remove setup words that bury the lede.
 - Swap a generic verb for a power verb (burned, cracked, ditched,
   nailed).
 - Turn a statement into a withheld reveal ("I won't say the brand,

@@ -13,9 +13,12 @@
 ```text
 Trigger name: Guide - <KEYWORD>
 When: Instagram comment matches whole word <KEYWORD>
-Do: send private DM
+Do: send one private DM containing only the requested resource
 Public reply: שלחתי לך בפרטי
 Collision notes: <none or explanation>
+Consent scope: this comment request only
+Dedupe key: <comment-id plus route-id>
+Rate limit: <configured per-account limit>
 ```
 
 ## DM Text Pattern
@@ -72,6 +75,10 @@ automation_status:
 automation_runtime:
 automation_proof:
 collision_check:
+consent_scope:
+dedupe_key:
+rate_limit:
+retention_policy:
 
 ## Links
 
@@ -82,13 +89,14 @@ collision_check:
 
 ## Activation Proof
 
-For the user's current workflow, `automation_status: active` means all of these are true:
+For a configured workflow, `automation_status: active` means all of these are true:
 
-- Route exists in `tools/instagram-cta-automation/routes.json`.
-- Route is synced to `<host>:~/instagram-cta-automation/routes.json`.
-- Local and the remote host `npm run validate:routes` pass.
-- the remote host service `com.<user>.instagram-cta-automation` is listening on `127.0.0.1:18787`.
-- Health endpoint returns `dry_run:false`, `poll_enabled:true`, and `last_error:null`.
-- Synthetic dry-run with the exact keyword returns `status:"sent"`.
+- Route exists in the configured route store.
+- Route validation passes in the deployment environment.
+- The configured HTTPS health endpoint reports a ready, non-dry-run service with no current error.
+- A controlled synthetic test, sent only to an approved test account, returns the configured success status for the exact keyword.
+- Dedupe and rate-limit checks pass.
+- Logs exclude message bodies, access tokens, and unnecessary profile data.
+- Retention and deletion behavior match the published privacy notice.
 
 If any item is missing, use `automation_status: blocked`, not `active`.

@@ -16,11 +16,9 @@ CONSTRAINTS:        (no-face, brand voice, sponsor, etc.)
 ────────────────────────────────────────────────────────────────────────
 #  | ARCHETYPE       | VERBAL LINE             | ON-SCREEN TEXT  | FIRST FRAME           | PROOF / RATIONALE
 ────────────────────────────────────────────────────────────────────────
-1  | [ARCHETYPE]     | [SPOKEN LINE, <2s]      | [3-7 WORDS]     | [WHAT THE EYE SEES]   | [ONE LINE: WHY THIS]
-2  | [ARCHETYPE]     | [SPOKEN LINE, <2s]      | [3-7 WORDS]     | [WHAT THE EYE SEES]   | [ONE LINE: WHY THIS]
-3  | [ARCHETYPE]     | [SPOKEN LINE, <2s]      | [3-7 WORDS]     | [WHAT THE EYE SEES]   | [ONE LINE: WHY THIS]
-4  | [ARCHETYPE]     | [SPOKEN LINE, <2s]      | [3-7 WORDS]     | [WHAT THE EYE SEES]   | [ONE LINE: WHY THIS]
-5  | [ARCHETYPE]     | [SPOKEN LINE, <2s]      | [3-7 WORDS]     | [WHAT THE EYE SEES]   | [ONE LINE: WHY THIS]
+1  | [ARCHETYPE]     | [BRIEF SPOKEN LINE]     | [GLANCEABLE TEXT]| [WHAT THE EYE SEES]  | [ONE LINE: WHY THIS]
+2  | [ARCHETYPE]     | [BRIEF SPOKEN LINE]     | [GLANCEABLE TEXT]| [WHAT THE EYE SEES]  | [ONE LINE: WHY THIS]
+3  | [ARCHETYPE]     | [BRIEF SPOKEN LINE]     | [GLANCEABLE TEXT]| [WHAT THE EYE SEES]  | [ONE LINE: WHY THIS]
 ────────────────────────────────────────────────────────────────────────
 
 TOP PICK:           # [N] because [REASON]
@@ -46,7 +44,6 @@ Archetype shorthand to use in the grid:
 Notes:
 
 - Default three rows. One archetype per row unless execution is meaningfully different.
-  execution is meaningfully different.
 - If two rows look like rewordings of each other, cut one and replace
   with a new archetype.
 - Pair this with `assets/hook-checklist.md` once the batch is drafted.

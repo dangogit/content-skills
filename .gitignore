@@ -2,3 +2,7 @@
 node_modules/
 *.bak
 *.log
+*.pyc
+__pycache__/
+.pytest_cache/
+.uv-cache/

@@ -1,20 +1,19 @@
 # Hooks
 
-The hook is the first 1 to 3 seconds (and the first line of on-screen text). It
-carries more weight than any other part of the piece: if it fails, nothing else
-gets seen. Treat hook-writing as the main event, not a warm-up.
+The hook is the opening beat: visual, spoken line, and on-screen text. It strongly
+affects whether the intended viewer understands why to continue, but no fixed
+window or hook pattern guarantees retention.
 
 ## How to generate a strong set
 
-- Produce **6 to 10 hooks across different archetypes below**, not 6 rewordings
-  of one. The point is to give the user real angles to choose from.
+- Produce several hooks across different archetypes below, not rewordings of one.
+  The point is to give the user real angles to choose from.
 - Lead with the **payoff or the tension**, never with setup, throat-clearing, or
   "hey guys."
 - Make the first line **concrete**: a number, a named thing, a stakes word.
 - Open a **loop** the viewer needs closed (curiosity), or state a **stake** they
   can't ignore (consequence).
-- Say it out loud. If it takes longer than about 2 seconds or stumbles, cut it
-  down.
+- Say it out loud. If it stumbles or delays the premise, cut it down.
 - Label each hook with its archetype so the user learns the pattern.
 
 ## Archetypes
@@ -35,7 +34,8 @@ gets seen. Treat hook-writing as the main event, not a warm-up.
    in the payoff, or trust dies.
 
 5. **Direct call-out.** Name the exact viewer. *"If you have [specific
-   situation], this is for you."* Narrows reach but spikes relevance and saves.
+   situation], this is for you."* It may narrow the audience while increasing
+   relevance. Verify with account data.
 
 6. **Mistake / cost confession.** Use only with real documented cost or time.
    Specificity comes from proof, never cosmetic precision.
@@ -57,13 +57,14 @@ gets seen. Treat hook-writing as the main event, not a warm-up.
 - Slow build-ups, intros, logos, or "hey guys, welcome back."
 - Brand-first ("Check out our new …"). Lead with the viewer's outcome.
 - Vague benefit ("level up your content"), with no concrete noun or stake.
-- A hook that the body never pays off. It's the fastest way to lose saves and trust.
-- Cleverness that needs explaining. Clarity outperforms wit.
+- A hook that the body never pays off. It damages trust.
+- Cleverness that needs explaining. Prefer immediate clarity unless the creative
+  hypothesis specifically tests ambiguity.
 
 ## Pairing hooks to payoff
 
 Every hook makes a promise. Before finalizing, check the script actually delivers
-on it within the first few seconds of the body, and fully by the payoff. If it
+on it promptly in the body, and fully by the payoff. If it
 can't, change the hook, not the truth.
 
 ## Constructing the hook line

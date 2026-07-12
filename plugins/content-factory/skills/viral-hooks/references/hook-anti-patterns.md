@@ -1,8 +1,7 @@
 # Hook anti-patterns
 
-The openings that tend to tank first-three-seconds retention. Each one
-has a documented failure mode. Catch these in critique mode, name the
-pattern, then rewrite. Don't just flag them.
+Common opening risks. Treat each diagnosis as a hypothesis to verify against
+message, audience, and account data. Name exact failure, then rewrite.
 
 ## Welcome / logo / channel intro
 
@@ -16,8 +15,8 @@ need to name themselves at second zero.
 
 ## Logo animations and channel jingles
 
-Visual equivalent of the welcome intro. A two-second logo before the
-content is a two-second flat line on the retention graph.
+Visual equivalent of welcome intro. Logo can delay value when viewer has not
+chosen brand-first context.
 
 The fix: branding goes at the end, not the start. The first frame
 sells the watch. The end frame sells the channel.
@@ -56,16 +55,10 @@ truth is non-negotiable; the wording isn't.
 "Smash that subscribe button before we start." "Follow for more
 content like this."
 
-Why it fails: asking for the sub before delivering any payoff creates
-psychological resistance. The viewer hasn't earned anything yet, so
-the ask reads as presumptuous. Measurable retention drop in the
-first three seconds. On Shorts specifically, the subscribe button
-sits at the bottom of the player and accidental taps are common,
-which means a "subscribe" CTA gets noise rather than signal.
+Risk: asking before payoff can feel premature and compete with viewing.
 
-The fix: deliver the value first. The right early CTA on short-form
-is "watch the full video on my channel" or "save this for later,"
-not "subscribe."
+Fix: align CTA timing and action with objective. Test follow, save, watch-through,
+or no CTA rather than declaring one universal winner.
 
 ## Story openers on TikTok
 
@@ -158,9 +151,7 @@ not the punchline.
 The hook is hidden inside the third sentence. The first two sentences
 are setup the writer thought was necessary.
 
-Why it fails: the algorithm reads the early seconds, not the structure
-the writer intended. The "real" hook never gets reached because the
-viewer swiped during the setup.
+Risk: viewer may leave before intended hook appears. Verify on retention curve.
 
 The fix: delete the first two sentences. Whatever's in sentence three
 is probably the actual hook. If sentence three doesn't work as an
@@ -171,9 +162,8 @@ opener, you don't have a hook yet.
 The hook has its own setup, escalation, and payoff. By the time the
 viewer reaches the actual video content, half the audience has left.
 
-Why it fails: the hook is supposed to resolve by second 3, not be a
-mini-video unto itself. A hook that doesn't pay off until second 8
-is a video with two hooks competing.
+Risk: opener becomes separate mini-video and delays main promise. Compare actual
+opening duration and drop-off against same-format baseline.
 
 The fix: cut the hook down to one beat. If the hook needs setup, the
 setup is the hook; start there.
@@ -182,8 +172,8 @@ setup is the hook; start there.
 
 When the user hands over a draft:
 
-1. Read the hook out loud. Time it. If it runs over 2 seconds, that
-   alone is the diagnosis.
+1. Read hook aloud. Time it. Diagnose only when duration hurts clarity or baseline,
+   not because it crosses universal threshold.
 2. Check it against this list. Name the specific anti-pattern by
    name. "This is a vague-tease hook" is more useful than "this
    is weak."

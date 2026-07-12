@@ -5,4 +5,6 @@
 - Meaningful text stays in safe zones and does not cover the focal object.
 - One promise, one focal line, and one visual anchor per body slide.
 - CTA artifact and route are proven before upload.
+- Every non-original visual has source, permitted use, and required disclosure recorded.
+- Public upload contains no private metadata or unapproved personal information.
 - Metricool create response and planner refetch agree before schedule handoff.

@@ -14,7 +14,7 @@ lessons. Never collapse reach, retention, authority, and conversion into one sco
 ## When to Use
 
 - Published asset reaches 24-hour or 7-day review window.
-- the creator asks what content worked and why.
+- Creator asks what content worked and why.
 - Editorial team needs evidence for next hook, story, CTA, or format experiment.
 - Research brief wants to cite past performance as proof.
 
@@ -24,6 +24,8 @@ lessons. Never collapse reach, retention, authority, and conversion into one sco
 - Metricool analytics access for brand `<METRICOOL_BLOG_ID>`.
 - Declared objective and asset metadata.
 - Python 3.9+, standard library only.
+- Aggregate counts only. Do not export usernames, comment text, recipient IDs,
+  private message bodies, or access tokens into analysis files.
 
 ## Workflow
 
@@ -87,12 +89,13 @@ Create JSON:
 ### Step 5: Analyze
 
 ```bash
-python3 scripts/analyze_metricool.py \
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/content-performance-review/scripts/analyze_metricool.py" \
   --input <normalized.json> \
-  --output-dir content-system/performance/reports
+  --output-dir <configured-performance-output-dir>
 ```
 
-Review separate objective leaders:
+Review separate metric leaders inside each objective. Do not collapse metrics with
+different units into one winner:
 
 - reach: reach and views;
 - retention: watch-time ratio and three-second view rate;
@@ -106,9 +109,10 @@ State inference, not causation, when several variables changed.
 
 ### Step 7: Write Performance Note
 
-Create `content-system/performance/<asset>-<window>.md`. Update asset, ledger, and
-timeline record only with verified status. Future research may cite performance only after
-note exists.
+Create the note under configured `performance_output_dir`, or return it in the
+handoff when no output directory is configured. Update configured asset, ledger,
+and timeline records only with verified status. Future research may cite
+performance only after the note exists.
 
 ### Step 8: Promote One Next Experiment
 
@@ -137,10 +141,11 @@ Age caveat:
 
 ## Resources
 
-- `scripts/analyze_metricool.py` - validate and normalize Metricool export.
+- `${CLAUDE_PLUGIN_ROOT}/skills/content-performance-review/scripts/analyze_metricool.py` - validate and normalize Metricool export.
 - `scripts/tests/` - rate, baseline, validation, and leader tests.
 - `references/metricool-fields.md` - preferred fields and interpretation.
-- `content-system/templates/performance-note.md` - repo note template.
+- Configured project performance template when present; otherwise use the output
+  format above.
 
 ## Key Principles
 

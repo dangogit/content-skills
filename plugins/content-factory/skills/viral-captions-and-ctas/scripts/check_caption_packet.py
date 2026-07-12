@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
-"""Mechanical gate for a caption/CTA packet."""
+"""Validate caption and CTA packet fields."""
 
 from pathlib import Path
 import argparse
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "lib"))
+from contracts import require_fields
+
+
+REQUIRED = (
+    "Objective", "Caption", "CTA", "CTA rationale", "On-screen text",
+    "Hashtags", "Pinned comment", "Risk flags",
+)
 
 
 def check_packet(text: str) -> list[str]:
-    errors = []
+    _, errors = require_fields(text, REQUIRED)
     if "—" in text:
         errors.append("contains an em dash")
-    for label in ("Caption", "CTA", "Objective"):
-        if label.casefold() not in text.casefold():
-            errors.append(f"missing {label}")
     if "share with someone who needs this" in text.casefold():
         errors.append("uses generic share CTA")
     return errors
@@ -22,11 +29,11 @@ def main() -> int:
     parser.add_argument("packet", type=Path)
     args = parser.parse_args()
     errors = check_packet(args.packet.read_text(encoding="utf-8"))
+    for error in errors:
+        print(f"FAIL: {error}", file=sys.stderr)
     if errors:
-        for error in errors:
-            print(f"FAIL: {error}")
         return 1
-    print("PASS: caption packet mechanics")
+    print("PASS: caption packet contract")
     return 0
 
 

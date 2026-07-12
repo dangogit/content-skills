@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "content-factory",
   "displayName": "Content Factory",
-  "version": "0.2.0",
-  "description": "Production-safe Hebrew social content skills: story selection, hooks, captions, carousels, guide CTAs, reels, Israeli localization, and evidence-backed performance review.",
+  "version": "0.2.1",
+  "description": "Hebrew social content workflows with explicit proof, consent, QA, configuration, and publishing gates.",
   "author": {
     "name": "Daniel Goldman",
     "email": "danielthegoldman@gmail.com",

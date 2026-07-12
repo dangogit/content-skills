@@ -1,6 +1,6 @@
 ---
 name: hebrew-captioned-video-reels
-description: Use when the creator gives raw talking-head videos and asks to add Hebrew Instagram-style captions, cut silence, add a first-5s hook, avoid covering his face, and schedule the rendered reels to Facebook, Instagram, TikTok, and YouTube in Metricool.
+description: Produce or correct Hebrew-captioned talking-head Reels with transcript fidelity, cut review, frame-zero, audio, rights, privacy, upload, and verified scheduling gates. Use for raw talking-head video, podcast cuts, Hebrew captions, Reel corrections, or Metricool Reel scheduling.
 ---
 
 # Hebrew Captioned Video Reels
@@ -15,17 +15,20 @@ but scheduling requires explicit current-turn approval and complete CTA/resource
 
 ## When to Use
 
-- the creator supplies raw talking-head video for Hebrew captions and hook treatment.
+- Creator supplies raw talking-head video for Hebrew captions and hook treatment.
 - Long podcast or interview needs reviewable candidate cuts.
 - Existing scheduled Reel needs exact-target correction or replacement.
-- Final Reel needs four-network Metricool verification.
+- Final Reel needs Metricool verification for every network selected in configuration.
 
 ## Prerequisites
 
-- Repo dependencies installed for `scripts/daily-reel`.
-- Local Hebrew ASR dependencies available.
-- `ffmpeg`, `ffprobe`, Node.js, and project fonts available.
-- Metricool and R2 access required only for publish phase.
+- A project renderer and transcription workflow, or an existing finished video
+  that needs only QA and scheduling.
+- `ffmpeg`, `ffprobe`, and the dependencies required by the selected project
+  workflow.
+- Metricool and configured public-upload provider access required only for publish phase.
+- `.content-factory.json` configured before upload or scheduling.
+- Source footage, music, SFX, logos, and B-roll cleared for intended public use.
 - Current-turn approval required before scheduling or replacing live records.
 
 ## Default Output
@@ -34,8 +37,10 @@ but scheduling requires explicit current-turn approval and complete CTA/resource
 - Full-frame video. No split screen.
 - Captions overlay video only, lower-third, never over the creator's face.
 - No topic/title label unless the creator explicitly asks.
-- First 5 seconds: large scroll-stopping Hebrew hook at top.
-- B-roll must be big enough to read on phone. Default near full-width/tall window, not tiny picture-in-picture. Use about `1060x720` at top `112`, and enlarge further for UI/site demos when captions still fit.
+- Opening beat: readable Hebrew hook in a verified safe region. Do not assume a
+  fixed five-second duration.
+- B-roll must be big enough to read on a phone. Prefer a large window for UI or
+  site demos, then validate it against face, captions, and platform chrome.
 - Spoken Israeli Hebrew. Short caption groups. Highlight one key word with `*word*`.
 - Cut obvious silence and dead tails. Do not cut meaning.
 
@@ -58,10 +63,13 @@ Keyword CTA blocks scheduling until all pass:
 - Named artifact, not generic "guide".
 - Production guide URL returns `200`.
 - Exact collision-safe keyword exists in local route registry.
-- Route synced to <cta-host> CTA service.
-- Local and <cta-host> route validation pass.
-- <cta-host> health shows `dry_run:false`, `poll_enabled:true`, `last_error:null`.
-- Synthetic dry-run returns exact keyword and `status:"sent"`.
+- Route deployed through the approved process.
+- Route validation passes in the deployment environment.
+- Configured `cta_automation_base_url` reports ready, non-dry-run state with no
+  current error.
+- Controlled synthetic test returns the exact keyword and configured success
+  status without contacting an uninvolved account.
+- Dedupe and rate limits pass; logs and retention follow the resource-gate policy.
 - Asset notes, ledger, and timeline record `guide_url`, `cta_keyword`, and
   `automation_status: active`.
 
@@ -70,8 +78,10 @@ Use `carousel-guide` resource/automation workflow until generalized
 
 ## Motion Preset
 
-- Default talking-head reel speed is `1.2x` when the creator asks for faster delivery.
-- Default subtle zoom loop: start at `95%`, zoom in to `105%` over `2s`, hold `105%` for `3s`, zoom out to `95%` over `2s`, hold `95%` for `3s`, then repeat. The low-scale hold is part of the loop, not optional.
+- Preserve natural speech speed unless the creator requests a change. Compare the
+  requested speed with intelligibility and caption timing before accepting it.
+- Use a subtle zoom only when it supports the scene. Keep scale within crop-safe
+  bounds and inspect the complete loop instead of relying on a fixed preset.
 - Keep zoom centered and crop-safe: no black edges, no face cut-off, no caption-face collision.
 - When the creator asks for tension background music and visible attribution is not approved, generate or use no-attribution bed and mix it audibly under voice. QA with `volumedetect`, `silencedetect`, and voice-only-vs-final audio difference before claiming music is present.
 
@@ -91,7 +101,7 @@ human listen result. No single loudness number proves good mix.
 Run the fast media gate before upload:
 
 ```bash
-scripts/check-reel-media.sh <final.mp4>
+"${CLAUDE_PLUGIN_ROOT}/skills/hebrew-captioned-video-reels/scripts/check-reel-media.sh" <final.mp4>
 ```
 
 This checks the machine-verifiable media contract only. Complete the human
@@ -100,7 +110,7 @@ frame, caption, phone-listen, CTA, and planner checks below as well.
 Check the handoff record before calling the reel complete:
 
 ```bash
-python3 scripts/check_reel_manifest.py <handoff.md>
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/hebrew-captioned-video-reels/scripts/check_reel_manifest.py" <handoff.md>
 ```
 
 ## Thumbnail And Cover
@@ -115,28 +125,35 @@ python3 scripts/check_reel_manifest.py <handoff.md>
 
 - Before trimming or replacing a scheduled video, verify exact target by schedule date, hook/title, Metricool id, uuid, and local filename. If the creator says "June" but the active schedule is July, treat it as ambiguous until the planner proves the intended future post.
 - If the wrong scheduled post was changed, restore from the last verified good asset first, then apply the requested edit only to the intended date/uuid.
-- `videos-to-caption/uploaded/` is for assets that are scheduled or already published. Superseded files go under `videos-to-caption/archive/superseded/`. Rendered corrections that are uploaded to R2 but missed Metricool scheduling go under `videos-to-caption/ready-unscheduled/`.
+- When the project provides lifecycle folders, keep scheduled/published,
+  superseded, and ready-but-unscheduled assets separate. Do not infer those
+  states from file location alone.
 - If the publish time has passed and the post leaves the pending planner, do not claim the correction is scheduled. Record it as `ready-unscheduled` with the failed update reason and planner proof boundary.
 
 ## Workflow
 
 ### Required Context
 
-Before production or scheduling, follow repo `AGENTS.md`:
+Before production or scheduling, follow repo `AGENTS.md` and read only configured,
+existing project files:
 
-1. Read `content-system/pipeline.md`.
-2. State Sync: `content-system/content-ledger.md`, timeline record, and Metricool planner when available.
-3. Read `design/lessons.md` and `design/DESIGN.md`.
-4. For music, read `music/LICENSES.md`.
-5. For Instagram publishing fallback, read `scripts/instagram/SETUP.md`.
-6. For scheduling, use brand `<METRICOOL_BLOG_ID>`, timezone `Asia/Jerusalem`.
+1. Read configured pipeline and ledger files when present. Otherwise record
+   recent assets, duplicate risk, planner state, and objective in the handoff.
+2. Read configured design system and design lessons when present.
+3. For music, require a license record. Read configured `music_licenses_path`
+   when present.
+4. For publishing fallback, use only a user-approved, documented project
+   integration. Never infer credentials or targets.
+5. Read `.content-factory.json`. If publishing target, timezone, or approved
+   networks are missing, stop before upload or scheduling.
 
 ## Transcribe
 
 Use local Hebrew ASR:
 
 ```bash
-python3 scripts/transcribe-hebrew-captions.py videos-to-caption/<file>.MOV
+python3 "${CLAUDE_PROJECT_DIR}/scripts/transcribe-hebrew-captions.py" \
+  "${CLAUDE_PROJECT_DIR}/videos-to-caption/<file>.MOV"
 ```
 
 Preferred model: `ivrit-ai/whisper-large-v3-turbo-ct2` through `faster-whisper`.
@@ -162,7 +179,7 @@ Default division of responsibility:
 
 - HTML review editor = choose and fix cut points.
 - Remotion = final render with hook, captions, motion, music, and QA.
-- `ffmpeg` preview cuts are allowed for fast review only, but final output goes through `scripts/daily-reel/caption-video.mjs`.
+- `ffmpeg` preview cuts are allowed for fast review only, but final output goes through the configured project renderer.
 
 Review editor requirements:
 
@@ -205,7 +222,8 @@ Only add a waveform package after the manual loop proves useful. If needed later
 
 ## Render
 
-Use `scripts/daily-reel/caption-video.mjs`.
+Use `${CLAUDE_PROJECT_DIR}/scripts/daily-reel/caption-video.mjs` when present,
+or the renderer configured by the consumer project.
 
 Create job JSON like:
 
@@ -238,7 +256,8 @@ Create job JSON like:
 Render:
 
 ```bash
-node scripts/daily-reel/caption-video.mjs videos-to-caption/caption-jobs-vN.json
+node "${CLAUDE_PROJECT_DIR}/scripts/daily-reel/caption-video.mjs" \
+  "${CLAUDE_PROJECT_DIR}/videos-to-caption/caption-jobs-vN.json"
 ```
 
 ## Visual QA
@@ -277,17 +296,20 @@ ffprobe -v error -show_entries \
 Run:
 
 ```bash
-node --check scripts/daily-reel/caption-video.mjs
-cd scripts/daily-reel && npx tsc --noEmit
+node --check "${CLAUDE_PROJECT_DIR}/scripts/daily-reel/caption-video.mjs"
+cd "${CLAUDE_PROJECT_DIR}/scripts/daily-reel" && npx tsc --noEmit
 ```
 
 ## Upload
 
-Prefer Cloudflare R2 when `.env` has `CONTENT_R2_*`:
+Public upload makes draft reachable outside local machine. Upload only after
+creator explicitly approves public exposure and rights review passes. Never
+upload private source footage, credentials, hidden client material, or an
+unapproved draft. Use configured provider; example below assumes project R2
+uploader and required variables are already exported by trusted environment:
 
 ```bash
-set -a; source .env; set +a
-node scripts/ops/upload-artifact-r2.mjs <out>.mp4 \
+node "${CLAUDE_PROJECT_DIR}/scripts/ops/upload-artifact-r2.mjs" <out>.mp4 \
   --prefix=content/reels/<slug> \
   --out=<manifest>.json
 ```
@@ -304,29 +326,29 @@ just to prove `video/mp4`.
 
 Use Metricool app connector if direct MCP needs OAuth.
 
-Call `get_brand_settings` first and use the returned brand timezone for create and
-refetch. The connector may return `Asia/Tel_Aviv`; treat it as the live Metricool
-timezone for that brand even though project docs often say `Asia/Jerusalem`.
+Call `get_brand_settings` first and use returned brand timezone for create and
+refetch. Live provider value wins over local example configuration.
 
-Before creating posts, refetch the planner for the relevant future window. Do not
-schedule into an occupied `18:00` reel slot unless the creator explicitly asks for that
-collision. For batches, choose the next available daily `18:00` slots and record the
-reason in the schedule proof.
+Before creating posts, refetch planner for relevant future window. Do not schedule
+into occupied slot unless creator explicitly approves collision. For batches, use
+configured cadence and record selection reason.
 
-Default schedule target is Facebook + Instagram + TikTok + YouTube unless the creator explicitly overrides:
+Schedule only configured and explicitly approved networks:
 
-- `blog_id`: `<METRICOOL_BLOG_ID>`
-- `timezone`: `Asia/Jerusalem`
+- `blog_id`: `.content-factory.json.metricool_blog_id`
+- `timezone`: live brand setting, falling back to configured `metricool_timezone`
 - `content_type`: `REEL`
-- `networks`: `["facebook", "instagram", "tiktok", "youtube"]`
+- `networks`: `.content-factory.json.publishing_networks`
 - `media`: `[public_mp4_url]`
 - `tiktok_title`: hook without markup, short enough for TikTok
 - `youtube_title`: hook without markup, short enough for YouTube
 - `youtube_made_for_kids`: `false`
 - `draft`: `false`
-- time: 18:00 Israel for evening reels
+- time: `.content-factory.json.reel_schedule_time`
 
-If Metricool rejects any network, do not silently drop that network. Record the exact network and error, then schedule a subset only when the creator explicitly waives the failed network in the current turn.
+If Metricool rejects any approved network, do not silently drop it. Record exact
+network and error, then schedule subset only when creator explicitly waives failed
+network in current turn.
 
 After create, refetch planner and record:
 
@@ -334,7 +356,7 @@ After create, refetch planner and record:
 - uuid
 - date
 - timezone
-- per-network status for Facebook, Instagram, TikTok, and YouTube
+- per-network status for every configured network
 - `draft:false`
 - `autoPublish:true`
 - media count
@@ -342,21 +364,20 @@ After create, refetch planner and record:
 - proof that each Metricool CDN media URL returns `200 video/mp4`
 - planner URL when returned
 
-Write back to:
-
-- `videos-to-caption/processing-notes.md`
-- `content-system/content-ledger.md`
-- `<timeline-path>` (resolve home dynamically)
-- asset README or processing record
-- schedule JSON or `meta.json` when present
+Write back to the asset README or processing record, schedule JSON or `meta.json`
+when present, and every configured ledger and timeline. If none exists, retain the
+complete handoff packet and do not claim external write-back.
 
 Do not schedule or publish without the creator's explicit current-turn approval.
 
 ### Replacement And Duplicate Gate
 
 - Prefer replacing an existing scheduled post only when the Metricool update connector can refetch and prove the old id/uuid now points to the new media.
-- If update fails, create a fresh post only after the creator has explicitly approved scheduling in the current turn and all default networks are included.
-- Immediately refetch the planner after a fresh create. If the old scheduled post still appears, do not describe the replacement as clean. Record `scheduled_with_duplicate_cleanup_needed`, the old id/uuid, the new id/uuid, and the exact update errors in the asset README, schedule JSON, `content-system/content-ledger.md`, and timeline record.
+- If update fails, create a fresh post only after creator explicitly approves scheduling in current turn and all configured approved networks are included.
+- Immediately refetch the planner after a fresh create. If the old scheduled post
+  still appears, do not describe the replacement as clean. Record
+  `scheduled_with_duplicate_cleanup_needed`, both ids/uuids, and exact update
+  errors in the asset handoff plus every configured ledger and timeline.
 - Metricool may return `youtubeData.type:"video"` even when the upload is vertical and short-form. Record the returned type honestly. Treat it as a Shorts candidate only when YouTube or Metricool confirms Shorts.
 
 ## Output Format
@@ -387,17 +408,16 @@ Status:
 
 ## Resources
 
-- `references/qa-contract.md` - final media, pixel, audio, CTA, and publish proof.
-- `scripts/check-reel-media.sh` - executable H.264/AAC/1080x1920/duration gate.
-- `scripts/check_reel_manifest.py` - required proof-field gate for the handoff.
-- `scripts/transcribe-hebrew-captions.py` - local Hebrew ASR.
-- `scripts/daily-reel/caption-video.mjs` - final Remotion renderer.
-- `scripts/ops/upload-artifact-r2.mjs` - public MP4 upload.
-- `music/LICENSES.md` - music licensing and attribution requirements.
-- `content-system/pipeline.md` - State Sync, production, and write-back gates.
-- `design/lessons.md` - current the creator-specific content rules.
+- `${CLAUDE_PLUGIN_ROOT}/skills/hebrew-captioned-video-reels/references/qa-contract.md` - final media, pixel, audio, CTA, and publish proof.
+- `${CLAUDE_PLUGIN_ROOT}/skills/hebrew-captioned-video-reels/scripts/check-reel-media.sh` - executable H.264/AAC/1080x1920/duration gate.
+- `${CLAUDE_PLUGIN_ROOT}/skills/hebrew-captioned-video-reels/scripts/check_reel_manifest.py` - required proof-field gate for the handoff.
+- Project renderer, transcriber, and uploader only when explicitly selected by the
+  user or configured by the project.
+- Configured music license, pipeline, ledger, design-system, and design-lessons
+  paths when present.
 - `carousel-guide` - current named-resource and CTA automation workflow, also
   required for keyword Reels.
+- `${CLAUDE_PLUGIN_ROOT}/references/configuration.md` - public configuration contract.
 
 ## Key Principles
 

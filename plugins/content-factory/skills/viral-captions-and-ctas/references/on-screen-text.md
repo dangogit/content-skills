@@ -17,23 +17,21 @@ toggled on. Default to burned-in for three reasons:
 - You control font, weight, color, size, position, timing.
 - They show by default, on mute, to everyone.
 
-Auto-captions have their place as an accessibility fallback for viewers
-who toggled them on. They are not the main surface. TikTok's native
-auto-caption runs in the high-80s for accuracy and gives you no
-styling control.
+Auto-captions remain useful as an accessibility layer. Review platform-generated
+captions because accuracy varies by speaker, language, audio quality, and product
+version.
 
 ## The headline + body pattern
 
-The dominant high-performing layout:
+A useful layout to test:
 
-- One **large, static text block** at the top: the hook line or the
-  topic claim. This is the line the OCR reads first and the line the
-  muted viewer reads in the first frame.
+- One **large, static text block** near the hook-safe region: the hook line or the
+  topic claim. This gives a viewer immediate context.
 - **Body captions** built up word-by-word at the bottom or center as
   the voiceover speaks. These carry the spoken transcript.
 
-The headline does the SEO and the scroll-stop. The body keeps the muted
-viewer following the argument.
+The headline orients the viewer. The body carries the spoken argument. Treat
+search and retention effects as hypotheses to measure, not guarantees.
 
 ## The karaoke pattern
 
@@ -41,13 +39,11 @@ Caption text appears word-by-word or phrase-by-phrase **in sync with
 the audio**, not as a static block of the whole sentence. Words
 highlight, scale up, or change color as they're spoken.
 
-- Karaoke tends to be the highest-engagement subtitle style on TikTok.
-- Reels skews slightly more polished: bold centered blocks, boxed
-  panels, less aggressive pop.
-- Shorts splits the difference and tolerates either.
+- Test karaoke, phrase blocks, and static captions against the account baseline.
+- Match animation intensity to voice, format, and brand instead of assuming one
+  platform style always wins.
 
-Karaoke is also a pacing tool. Words appearing on beat keep the eye
-hooked the same way the cuts do.
+Karaoke can support pacing when its timing follows the speech.
 
 ## Safe zones
 
@@ -61,17 +57,14 @@ and right action rail. For the creator's Reels, follow `hebrew-captioned-video-r
 
 ## Font, color, contrast
 
-- **Weight:** bold (700+) is meaningfully more readable on mobile than
-  thin weights. Default to bold for body captions, heavier for
-  headlines.
-- **Color:** white with a black outline (or the inverse) is the default
-  that works across roughly 90% of content. High contrast against the
-  background beats clever color choices.
+- **Weight:** start with a bold weight, then verify readability on a phone.
+- **Color:** choose foreground, outline, and background using measured contrast
+  and real-frame inspection.
 - **Family:** sans-serif geometric fonts dominate. Montserrat Bold,
   TikTok Sans, Futura Bold, Archivo Black are common picks. TikTok Sans
   is open-source and matches the app's native UI if you want the
   in-app feel.
-- **Size:** validate on 1080x1920 phone preview. the creator's current renderer uses
+- **Size:** validate on a 1080x1920 phone preview. The creator's current renderer uses
   much larger pixel values than desktop point-size heuristics.
 - **Avoid:** thin weights, low-contrast pastels, decorative scripts,
   tight letterspacing. They look fine on a desktop preview and
@@ -88,11 +81,10 @@ and right action rail. For the creator's Reels, follow `hebrew-captioned-video-r
 
 ## Practical defaults
 
-- Headline at top, 5 to 8 words, large bold sans-serif, in the safe
-  zone.
-- Body captions karaoke-built, white with black outline, 22 to 28pt,
-  centered or bottom-center but above the platform caption.
-- Same topic words as the spoken hook and the written caption (the
-  three-surface SEO play; see `caption-craft.md`).
+- Keep the headline as short as meaning allows, in the safe zone.
+- Start with high-contrast phrase captions, then validate type size on the target
+  phone and feed surface.
+- Keep terminology consistent across spoken hook, on-screen text, and written
+  caption when that improves clarity.
 - Do not repeat the headline as the first line of body captions. The
   body picks up where the headline left off.

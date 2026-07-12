@@ -1,7 +1,7 @@
 # Platform Verification Checklist
 
 Platform mechanics change. Verify current product and official docs before production
-handoff. the creator's account analytics override generic creator advice.
+handoff. The creator's account analytics override generic creator advice.
 
 ## Shared Checks
 

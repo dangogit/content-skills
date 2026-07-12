@@ -34,22 +34,35 @@ def validate_item(item: dict[str, Any]) -> None:
         raise ValueError("Each item requires non-empty 'id'")
     for field in COUNT_FIELDS + ("average_watch_time", "duration_seconds", "three_second_view_rate"):
         value = item.get(field)
-        if value is not None and (not isinstance(value, (int, float)) or value < 0):
+        if value is not None and (
+            isinstance(value, bool) or not isinstance(value, (int, float)) or value < 0
+        ):
             raise ValueError(f"{item['id']}: {field} must be a non-negative number or null")
+    three_second_rate = item.get("three_second_view_rate")
+    if three_second_rate is not None and three_second_rate > 100:
+        raise ValueError(f"{item['id']}: three_second_view_rate must be between 0 and 100")
+    comments = item.get("comments")
+    qualified = item.get("qualified_keyword_comments")
+    deliveries = item.get("dm_deliveries")
+    if comments is not None and qualified is not None and qualified > comments:
+        raise ValueError(f"{item['id']}: qualified_keyword_comments cannot exceed comments")
+    if qualified is not None and deliveries is not None and deliveries > qualified:
+        raise ValueError(f"{item['id']}: dm_deliveries cannot exceed qualified_keyword_comments")
 
 
 def derive(item: dict[str, Any]) -> dict[str, Any]:
     validate_item(item)
     reach = item.get("reach")
-    interactions = sum(item.get(field) or 0 for field in ("comments", "likes", "saves", "shares"))
+    interaction_values = [item.get(field) for field in ("comments", "likes", "saves", "shares")]
+    interactions = sum(interaction_values) if all(value is not None for value in interaction_values) else None
     derived = dict(item)
     derived["interaction_rate"] = ratio(interactions, reach)
     derived["comment_rate"] = ratio(item.get("comments"), reach)
     derived["save_rate"] = ratio(item.get("saves"), reach)
     derived["share_rate"] = ratio(item.get("shares"), reach)
-    derived["authority_rate"] = (
-        None if reach in (None, 0) else ratio((item.get("saves") or 0) + (item.get("shares") or 0), reach)
-    )
+    saves = item.get("saves")
+    shares = item.get("shares")
+    derived["authority_rate"] = ratio(saves + shares, reach) if saves is not None and shares is not None else None
     derived["watch_time_ratio"] = ratio(item.get("average_watch_time"), item.get("duration_seconds"))
     derived["keyword_comment_rate"] = ratio(item.get("qualified_keyword_comments"), reach)
     derived["dm_delivery_rate"] = ratio(item.get("dm_deliveries"), item.get("qualified_keyword_comments"))
@@ -61,17 +74,18 @@ def median(items: list[dict[str, Any]], field: str) -> float | None:
     return statistics.median(values) if values else None
 
 
-def leader(items: list[dict[str, Any]], fields: tuple[str, ...]) -> str | None:
-    """Pick leader using first available metric, never add unlike units."""
-    for field in fields:
-        scored = [
-            (float(item[field]), str(item["id"]))
-            for item in items
-            if item.get(field) is not None
-        ]
-        if scored:
-            return max(scored)[1]
-    return None
+def leader(items: list[dict[str, Any]], field: str) -> str | None:
+    """Pick one metric leader without blending unlike units."""
+    scored = [
+        (float(item[field]), str(item["id"]))
+        for item in items
+        if item.get(field) is not None
+    ]
+    return max(scored)[1] if scored else None
+
+
+def metric_leaders(items: list[dict[str, Any]], fields: tuple[str, ...]) -> dict[str, str | None]:
+    return {field: leader(items, field) for field in fields}
 
 
 def analyze(payload: dict[str, Any]) -> dict[str, Any]:
@@ -82,6 +96,9 @@ def analyze(payload: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(raw_items, list) or not raw_items:
         raise ValueError("items must be a non-empty list")
     items = [derive(item) for item in raw_items]
+    item_ids = [str(item["id"]) for item in items]
+    if len(item_ids) != len(set(item_ids)):
+        raise ValueError("item ids must be unique")
     metric_fields = (
         "reach",
         "views",
@@ -97,10 +114,10 @@ def analyze(payload: dict[str, Any]) -> dict[str, Any]:
     )
     baselines = {field: median(items, field) for field in metric_fields}
     leaders = {
-        "reach": leader(items, ("reach",)),
-        "retention": leader(items, ("watch_time_ratio", "three_second_view_rate")),
-        "authority": leader(items, ("authority_rate",)),
-        "conversion": leader(items, ("keyword_comment_rate", "dm_delivery_rate")),
+        "reach": metric_leaders(items, ("reach", "views")),
+        "retention": metric_leaders(items, ("watch_time_ratio", "three_second_view_rate")),
+        "authority": metric_leaders(items, ("save_rate", "share_rate", "authority_rate")),
+        "conversion": metric_leaders(items, ("keyword_comment_rate", "dm_delivery_rate")),
     }
     return {
         "schema_version": "1.0",
@@ -125,15 +142,18 @@ def markdown(report: dict[str, Any]) -> str:
         "## Objective Leaders",
         "",
     ]
-    for objective, item_id in report["leaders"].items():
-        lines.append(f"- {objective}: `{item_id or 'unavailable'}`")
+    for objective, metrics in report["leaders"].items():
+        lines.append(f"- {objective}:")
+        for metric, item_id in metrics.items():
+            lines.append(f"  - {metric}: `{item_id or 'unavailable'}`")
     lines.extend(["", "## Items", "", "| ID | Reach | Interaction rate | Authority rate | Watch ratio | Keyword rate | DM delivery |", "|---|---:|---:|---:|---:|---:|---:|"])
     for item in report["items"]:
         def fmt(field: str) -> str:
             value = item.get(field)
             return "-" if value is None else f"{value:.4f}"
+        item_id = str(item["id"]).replace("|", "\\|").replace("\n", " ")
         lines.append(
-            f"| {item['id']} | {item.get('reach', '-')} | {fmt('interaction_rate')} | "
+            f"| {item_id} | {item.get('reach', '-')} | {fmt('interaction_rate')} | "
             f"{fmt('authority_rate')} | {fmt('watch_time_ratio')} | "
             f"{fmt('keyword_comment_rate')} | {fmt('dm_delivery_rate')} |"
         )

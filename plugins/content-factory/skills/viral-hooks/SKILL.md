@@ -26,7 +26,7 @@ Design hook hypotheses across visual, verbal, and on-screen layers. Hooks raise 
 - Approved idea card and selected story spine.
 - Current planner, ledger, last four posts, and active drafts checked.
 - Real proof for every number, authority claim, result, and named source.
-- `design/lessons.md` R36-R41, R46, R69-R74 read for carousel work.
+- Consumer project's current design lessons read when carousel work depends on them.
 
 ## Workflow
 
@@ -70,7 +70,7 @@ For each angle, specify:
 - News hooks show date or current release in slide 1 or 2.
 - If body cannot pay off hook, weaken hook or strengthen body.
 
-### Step 5: Apply the creator Hebrew Gate
+### Step 5: Apply Creator Hebrew Gate
 
 - Start with lived mistake, damage, or concrete scene before tool jargon.
 - Reuse the creator's exact phrasing when available.
@@ -96,7 +96,7 @@ Pick top hook and one backup. State one changed variable and comparison baseline
 Run the mechanical packet gate before handoff:
 
 ```bash
-python3 scripts/check_hook_packet.py <hook-packet.md>
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/viral-hooks/scripts/check_hook_packet.py" <hook-packet.md>
 ```
 
 ## Output Format
@@ -110,6 +110,9 @@ Recent-hook conflicts:
 
 | Angle | Visual | Verbal | On-screen | Proof | Payoff |
 |---|---|---|---|---|---|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 | | | | | |
 
 Top pick:
 Backup:

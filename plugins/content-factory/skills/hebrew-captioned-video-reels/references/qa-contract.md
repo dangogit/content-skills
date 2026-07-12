@@ -16,7 +16,7 @@ until every required proof is recorded in the asset handoff.
 Use the repository checker for the media row:
 
 ```bash
-scripts/check-reel-media.sh <final.mp4>
+${CLAUDE_PLUGIN_ROOT}/skills/hebrew-captioned-video-reels/scripts/check-reel-media.sh <final.mp4>
 ```
 
 The checker is a fast machine gate. It does not replace frame inspection,

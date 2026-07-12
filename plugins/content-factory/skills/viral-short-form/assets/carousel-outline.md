@@ -32,6 +32,6 @@ SLIDE n: CTA
 
 Notes:
 - Caption adds context or payoff. Do not repeat hook verbatim by default.
-- This template never overrides `content-system/pipeline.md`, `design/DESIGN.md`,
-  `design/lessons.md`, or carousel production skill.
+- This template never overrides configured project pipeline, design system,
+  design lessons, or carousel production skill.
 - If a slide has two ideas, split it. If a slide has none, cut it.

@@ -66,6 +66,6 @@ These patterns are vague, stacked, or trust-poor. Run rewrite through
 ## Placement
 
 - Layering is a hypothesis, not universal rule. Prefer one clear ask.
-- Data-driven version: open Insights or Analytics, find the actual
-  drop-off, place the primary CTA about 5 seconds before it.
+- Data-driven version: inspect actual drop-off and test CTA placement around
+  value moments. Do not assume fixed five-second offset.
 - Place CTA after viewer understands value. Use account analytics for timing.

@@ -29,6 +29,12 @@ def test_derive_calculates_objective_rates():
     assert item["dm_delivery_rate"] == pytest.approx(15 / 18)
 
 
+def test_missing_components_stay_missing_instead_of_becoming_zero():
+    item = derive({"id": "partial", "reach": 100, "likes": 10})
+    assert item["interaction_rate"] is None
+    assert item["authority_rate"] is None
+
+
 def test_analyze_keeps_objectives_separate():
     report = analyze({
         "content_type": "reels",
@@ -38,8 +44,8 @@ def test_analyze_keeps_objectives_separate():
             {"id": "conversion", "reach": 100, "qualified_keyword_comments": 20, "dm_deliveries": 18},
         ],
     })
-    assert report["leaders"]["reach"] == "reach"
-    assert report["leaders"]["conversion"] == "conversion"
+    assert report["leaders"]["reach"]["reach"] == "reach"
+    assert report["leaders"]["conversion"]["keyword_comment_rate"] == "conversion"
     assert report["overall_score"] is None
 
 
@@ -48,7 +54,7 @@ def test_negative_metric_is_rejected():
         derive({"id": "bad", "reach": -1})
 
 
-def test_retention_leader_does_not_add_unlike_units():
+def test_retention_reports_each_metric_leader_separately():
     report = analyze({
         "content_type": "reels",
         "items": [
@@ -56,4 +62,30 @@ def test_retention_leader_does_not_add_unlike_units():
             {"id": "three-second-only", "reach": 10, "three_second_view_rate": 99},
         ],
     })
-    assert report["leaders"]["retention"] == "watch-ratio"
+    assert report["leaders"]["retention"]["watch_time_ratio"] == "watch-ratio"
+    assert report["leaders"]["retention"]["three_second_view_rate"] == "three-second-only"
+
+
+def test_impossible_funnel_counts_are_rejected():
+    with pytest.raises(ValueError, match="dm_deliveries"):
+        derive({
+            "id": "bad-funnel",
+            "comments": 10,
+            "qualified_keyword_comments": 5,
+            "dm_deliveries": 6,
+        })
+
+
+def test_qualified_comments_cannot_exceed_comments():
+    with pytest.raises(ValueError, match="qualified_keyword_comments"):
+        derive({"id": "bad-qualified", "comments": 3, "qualified_keyword_comments": 4})
+
+
+def test_percentage_over_100_is_rejected():
+    with pytest.raises(ValueError, match="three_second_view_rate"):
+        derive({"id": "bad-rate", "three_second_view_rate": 101})
+
+
+def test_duplicate_item_ids_are_rejected():
+    with pytest.raises(ValueError, match="unique"):
+        analyze({"content_type": "posts", "items": [{"id": "same"}, {"id": "same"}]})

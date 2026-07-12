@@ -22,6 +22,7 @@ it to Reels too.
 - Approved asset and CTA.
 - Website repo or hosting surface for `<your-domain>`.
 - CTA automation service and route registry.
+- Platform policy permits requested reply flow.
 - Explicit approval before deployment, message changes, scheduling, or publishing.
 
 ## Workflow
@@ -45,19 +46,28 @@ language, and no accidental local-only URL.
 
 ### Step 4: Activate Delivery Route
 
-Validate locally, sync to `<host>`, check service health, and run synthetic dry
+Validate locally, deploy through the user's approved process, check the configured
+`cta_automation_base_url`, and run a synthetic dry
 run. Required result: exact keyword and `status:"sent"`. Record route version and
-timestamp.
+timestamp. Synthetic test must target controlled test account or non-sending mock,
+never uninvolved third party.
+
+Enforce one-request-one-response consent. Deduplicate events, cap retries and
+send rate, honor opt-out, and avoid storing comment text, usernames, or recipient
+identifiers longer than delivery and audit require. Never turn resource request
+into unrelated marketing sequence without separate consent.
 
 ### Step 5: Write Back And Release
 
 Write `guide_url`, `cta_keyword`, `automation_status: active`, and proof to the
-asset record, ledger, and timeline. Only then permit upload or scheduling.
+asset record plus every configured ledger or timeline. If no ledger or timeline
+is configured, retain the complete handoff packet. Only then permit upload or
+scheduling.
 
 Run contract validation:
 
 ```bash
-python3 scripts/check_resource_contract.py <resource-record.md>
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/carousel-guide/scripts/check_resource_contract.py" <resource-record.md>
 ```
 
 ## Output
@@ -73,6 +83,8 @@ Local validation:
 Remote validation:
 Health:
 Synthetic delivery:
+Consent scope:
+Dedupe/rate limit:
 Write-back:
 Status:
 ```
@@ -81,6 +93,7 @@ Status:
 
 - `references/instagram-agent-routing.md` - route safety patterns.
 - `scripts/check_resource_contract.py` - mechanical resource proof gate.
+- `${CLAUDE_PLUGIN_ROOT}/references/configuration.md` - endpoint and domain configuration.
 
 ## Key Principles
 
@@ -89,3 +102,4 @@ Status:
 3. Exact route, not assumed automation.
 4. Synthetic delivery, not green config.
 5. Write-back, not verbal completion.
+6. One requested resource, not hidden outreach funnel.

@@ -1,9 +1,7 @@
 # Anti-patterns
 
-The copy moves that suppress reach, regardless of how good the video is.
-Most of them buy a small action (a like, a low-quality comment) and pay
-a distribution tax that costs more than the action lifts. A few just
-waste the closing seconds of the video.
+Copy risks that may damage trust, clarity, or target action. Do not claim universal
+reach penalty unless current official policy or account experiment proves it.
 
 If a draft contains any of these, rewrite it. If it contains more than
 two, the whole copy layer needs a redo.
@@ -19,7 +17,7 @@ Still reject spammy, deceptive, or meaningless asks because they damage trust.
 - "Tag a friend who needs this"
 - "Double-tap if X"
 - "Share with 5 friends"
-- "Follow for more"
+- "Follow for more" when unrelated to objective or delivered value
 - "Drop a heart if [thing]"
 - "Comment [emoji] for the link" when promise is vague or delivery is deceptive
 
@@ -35,14 +33,13 @@ Rewrites that keep the intent:
   then deliver it through active DM automation.
 - "Tag a friend who needs this" → "Send this to your friend who keeps
   buying the wrong serum."
-- "Follow for more X tips" → cut it. Replace with a save or send.
+- "Follow for more X tips" → keep only when follower growth is explicit objective
+  and value proposition is specific; otherwise choose better-matched action.
 
 ## Caption keyword stuffing
 
-Repeating the primary keyword four or more times, listing every
-loosely-related term, padding the caption with synonyms. The platform
-reads it as low quality, and Google penalises it the same way it
-penalises web SEO stuffing.
+Repeating primary keyword mechanically, listing loosely related terms, or padding
+caption with synonyms. This hurts clarity and may become misleading metadata.
 
 Stuffed:
 
@@ -61,14 +58,11 @@ naturally. That's the whole rule.
 
 ## "Thanks for watching" sign-offs
 
-Closing-summary language ("thanks for watching", "see you next time",
-"hope you enjoyed") signals to the viewer that the video is over and
-triggers immediate drop-off in the closing seconds. Exactly when you
-want them to loop, save, or send.
+Closing-summary language may tell viewer value is finished. Keep it only when tone
+or relationship benefits and account data supports it.
 
-Short-form has no contract with the viewer. Outros are a long-form
-convention that misfires here. Worst on TikTok, where loops are a
-primary signal. Bad on every platform.
+Do not declare outros bad on every platform. Compare concise close, CTA, loop, and
+no-outro variants against objective.
 
 What to do instead: end on a line that loops back to the hook (so the
 rewatch starts from a sharper viewing) or on a single instruction CTA.
@@ -92,9 +86,7 @@ both surfaces and wastes the SEO slot.
 ## Multiple CTAs in one ask
 
 "Like, save, share, follow, comment below, and DM me for the guide."
-Every additional ask reduces the odds the viewer does any of them, and
-the wall of asks reads as desperation. One ask per video, matched to
-the strongest distribution signal for the content type.
+Multiple asks compete for attention. Prefer one primary action matched to objective.
 
 If you genuinely have two real asks (rare), pick the one that matches
 the content best and lead with it. The other rides as an implicit
@@ -102,19 +94,17 @@ aside.
 
 ## Putting the CTA before the payoff
 
-Asking for a save in second three, before the viewer has any reason to
-want to save it. CTAs land when they ride a value moment. Placed
-before the value, they trigger skip behaviour.
+CTA before demonstrated value may feel premature. Choose timing from story and
+account data rather than fixed second.
 
 The pattern that works: deliver the payoff (or a real taste of it),
 **then** make the ask. See `ctas-that-work.md` on placement.
 
 ## Long hashtag walls
 
-The 30-hashtag block at the bottom of the caption (or in the first
-comment) is the dead playbook. It's noise on TikTok, capped on
-Instagram, and triggers an active penalty on YouTube past 15. See
-`hashtag-reality.md`.
+Large hashtag walls often reduce readability. Verify current platform limits and
+enforcement. YouTube currently ignores all hashtags only above its documented
+threshold; do not invent lower penalty.
 
 ## Bait-and-switch caption-to-DM
 
@@ -128,20 +118,16 @@ Comment-to-DM itself is allowed when this contract holds.
 
 ## Generic "follow for more X" closers
 
-"Follow for more skincare tips" / "follow for daily videos" are
-bait-shaped and they don't work. Viewers who liked the content tend to
-follow on their own from a profile visit driven by the content's
-quality.
+Generic follow ask gives weak reason. It can still fit follower-growth objective
+when promise is specific and measured.
 
-Use that closing real estate for a save or send prompt instead. Both
-are algorithmically heavier and not bait-shaped.
+Choose follow, save, send, comment, watch-through, or no CTA from objective. Do not
+claim universal algorithmic hierarchy.
 
 ## Treating the caption as an afterthought
 
-A one-emoji caption on Instagram leaves the search-discovery channel
-completely off, in a feed where the caption is the SEO surface. The
-fix isn't a long caption. It's any caption that contains the topic
-words a real person would type into search.
+One-emoji caption may waste useful context. Add descriptive topic language when
+search or comprehension matters; do not promise discovery lift.
 
 ## Vague "for everyone" framing
 
@@ -157,7 +143,6 @@ real binary or a real stance, or skip the question.
 
 ## Misaligned voiceover and caption stance
 
-Sarcastic voiceover, earnest caption. Or the reverse. The viewer can't
-tell what the piece is, and completion drops. Voiceover and caption
-can differ in register (energy vs reflection) but must agree on
-**stance**.
+Sarcastic voiceover and earnest caption can create stance confusion. Treat
+completion effect as hypothesis. Voiceover and caption may differ in register but
+should make intended stance clear.

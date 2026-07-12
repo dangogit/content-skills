@@ -1,29 +1,27 @@
 # Retention & structure
 
-On short-form, **retention is distribution**: the algorithm keeps pushing what
-people finish and rewatch, and stops pushing what they swipe away from. So
-structure isn't decoration. It's the mechanism. Build every script as a chain
-where each beat earns the next second.
+Retention is one useful distribution and satisfaction signal, alongside relevance,
+viewer feedback, topic demand, and platform-specific systems. Structure still
+matters: build every script as a chain where each beat earns the next.
 
 ## The spine
 
 `Hook → Escalation → Payoff → CTA`
 
-- **Hook (0–3s):** open a loop or state a stake. (See `hooks.md`.)
+- **Hook (opening beat):** open a loop or state a stake. (See `hooks.md`.)
 - **Escalation (the middle):** raise tension, add specificity, or advance the
   story so curiosity keeps compounding. Never plateau.
 - **Payoff:** deliver on the hook's promise, clearly and visibly.
-- **CTA:** one ask, low-friction, tied to the payoff ("save this for next time,"
-  "comment X," "follow for the part 2").
+- **CTA:** one ask, low-friction, tied to objective and payoff.
 
 Use **"but / therefore"** between beats, not **"and then."** If two beats are
 joined by "and then," the second one probably isn't earning its place.
 
 ## The three failure modes (diagnose every draft against these)
 
-1. **Weak hook (*gone by 0:01*).** The first line lands flat: setup, vague
-   benefit, brand-first, or too slow. **Fix:** rewrite the first 3 seconds using a
-   sharper archetype; lead with the payoff or the stake.
+1. **Weak hook.** First line lands flat: setup, vague benefit, brand-first, or
+   too slow for this audience. **Fix:** sharpen opening beat and lead with payoff
+   or stake when story supports it.
 
 2. **No escalation (*it bleeds out*).** It opens fine, then flatlines. Nothing
    pulls the viewer to the next second. **Fix:** add an open loop early, reorder so
@@ -38,17 +36,17 @@ joined by "and then," the second one probably isn't earning its place.
 
 - **Open loops:** pose something early that only the payoff resolves. Close every
   loop you open.
-- **Front-load value:** put your second-strongest moment near the top to survive
-  the steep early drop-off; save the strongest for the payoff.
+- **Front-load value:** show useful evidence early. Test reveal order instead of
+  assuming a universal second-best/strongest sequence.
 - **Purposeful resets:** change shot, angle, framing, or text when story beat changes.
   Do not cut every few seconds by rule.
-- **Re-hook the middle:** a short "but it gets better / here's the catch" line
-  re-opens attention right where it usually sags.
+- **Re-hook after a real turn:** a short contrast line can clarify a new beat. Do
+  not add a synthetic tease when the story has no new information.
 - **Cut dead air:** no breath, no logo, no "so basically." Tighten to the bone.
 - **On-screen text reinforces audio.** It should restate the hook and key beats,
   not duplicate every word.
-- **Loop the end to the start** when natural. A final line that makes the first
-  line hit differently drives rewatches, which feed distribution.
+- **Loop end to start** when natural. Treat rewatch effect as account hypothesis,
+  then compare against same-format baseline.
 
 ## Critique mode (improving a draft)
 
@@ -70,15 +68,13 @@ Shape the energy like a ride, not a flat line:
 - **Quick hook:** fast in, no runway.
 - **Medium-paced middle with a peak:** let it breathe just enough to land one
   high-value or high-emotion "peak" (the laugh, the reveal, the result).
-- **Very quick ending:** clip the outro hard. A fast, clean end (or a line that
-  loops back to the hook) encourages rewatches, which feed distribution.
+- **Clean ending:** end after payoff and CTA. Treat loop and rewatch effects as
+  account hypotheses.
 
 Cut dead time while preserving human cadence. Test faster and slower variants when
 analytics show a pacing problem.
 
 ## Dual narrative
 
-Run two stories at once: say one thing in the voiceover while the visuals show a
-different but complementary thing. Eyes and ears each get fed, attention deepens,
-and the viewer stays without feeling lectured. Keep the two complementary, never
-contradictory, or you create confusion instead of depth.
+Voiceover and visuals may carry complementary information. Use this only when both
+remain understandable and do not overload or contradict each other.

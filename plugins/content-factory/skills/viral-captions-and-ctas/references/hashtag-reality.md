@@ -5,7 +5,8 @@ Hashtags label topics and support search. They are not guaranteed reach multipli
 ## Instagram
 
 - Use only relevant hashtags.
-- the creator's working default is up to six because `design/lessons.md` sets that cap.
+- If configured project design lessons set a working cap, follow it. Otherwise use
+  only relevant tags and verify current platform limits.
 - Do not call three to five an algorithmic sweet spot.
 - Caption topic words, content quality, and audience response matter more than tag volume.
 - Put Latin hashtags on separate lines after Hebrew copy to protect RTL.
@@ -20,8 +21,8 @@ Hashtags label topics and support search. They are not guaranteed reach multipli
 ## YouTube
 
 - Hashtags may appear in title or description, but descriptive title matters more.
-- `#Shorts` is optional, not required for Shorts classification.
-- YouTube ignores all hashtags when content contains more than 60.
+- Verify current Shorts classification and hashtag policy before production
+  handoff; do not depend on a tag for classification.
 - Avoid unrelated or misleading hashtags because they can trigger metadata enforcement.
 
 Official references:

@@ -1,7 +1,7 @@
 # Hook tactics
 
-The small moves inside a hook that tend to lift first-three-seconds
-retention. Use these as upgrades on a draft, not as replacements for
+Small moves worth testing against account baseline. Use these as hypotheses,
+not guaranteed ranking tactics or replacements for
 a real archetype. A tactic on a flat idea doesn't save it; a tactic
 on a strong angle tightens it.
 
@@ -19,10 +19,10 @@ deception, not hook craft.
 Numbers also stretch the on-screen text. "$413" in the corner sells the
 hook even when the voice is muted.
 
-## Authority signals in second one
+## Relevant credibility
 
-A short line that establishes credibility before the curiosity gap opens
-tends to outperform a curiosity gap alone.
+A short line establishing relevant credibility may reduce skepticism when
+authority is part of the story. Test against a version that starts with pain or proof.
 
 Shape: *"I've spent [time/effort] doing [thing]. Here's what nobody
 actually says about it."*
@@ -36,9 +36,8 @@ Examples by niche:
 - "I've spent six years inside [industry]. The real reason [outcome]
   isn't [common answer]."
 
-Why it works: credibility in second one, curiosity in second two,
-implied payoff in second three. All three resolve before the algorithm
-finishes its early read.
+Why test it: credibility, curiosity, and payoff expectation can work together.
+Account retention and conversion data decide whether ordering helps.
 
 The risk: false authority reads worse than no authority. If you can't
 back the claim, don't make it.
@@ -99,9 +98,8 @@ the rhythm of the surrounding feed.
 
 ## Direct callouts to the exact viewer
 
-Naming the viewer narrows reach but spikes relevance. Reach is what the
-algorithm gives you; relevance is what makes the algorithm decide to
-give you more.
+Naming viewer narrows message and may improve qualified relevance. It can also
+reduce broad reach. Choose based on objective.
 
 Shape: *"If you [specific situation], this is for you."*
 
@@ -110,9 +108,8 @@ Shape: *"If you [specific situation], this is for you."*
 - "If you've posted ten Reels and none broke 1,000 views, this is the
   fix."
 
-When the callout is precise enough, the viewer feels seen in the first
-second. Save rate climbs because the viewer mentally bookmarks the video
-even before the payoff.
+When callout is precise, right viewer may recognize relevance quickly. Treat
+save-rate effect as experiment, not causal fact.
 
 The failure mode: callouts so broad they apply to no one in particular
 ("if you want to grow on social media…"). The narrower, the better.
@@ -145,9 +142,10 @@ Start in the middle of the action. Skip the setup. Explain after.
 Works because the visual carries the hook, freeing the verbal line to
 do the curiosity gap.
 
-## Staccato pacing inside the hook window
+## Staccato pacing when message benefits
 
-The first three seconds reward short sentences and tight cuts.
+Short clauses and tight cuts can help dense openings, but natural delivery may
+work better for trust or explanation.
 
 - Two or three short clauses, not one long one.
 - Cut connective words. "And," "so," "basically," "honestly" all add
@@ -156,8 +154,7 @@ The first three seconds reward short sentences and tight cuts.
   b-roll) acts as a micro pattern interrupt and resets the
   habituation curve.
 
-Single-shot static hooks tend to underperform because the eye settles
-into "I've seen enough" by second two.
+Compare static and cut-heavy versions on same account. Do not assume motion wins.
 
 ## Repeat the hook in the on-screen text, compressed
 
@@ -192,9 +189,9 @@ When a hook is technically fine but lifeless, try one of these
 upgrades in order:
 
 1. Add a proven number when it materially sharpens stake.
-2. Add an authority signal in the first half-second.
+2. Add relevant credibility or visible proof when objective needs it.
 3. Name the exact viewer.
-4. Cut the first three words. Most hooks bury the lede.
+4. Remove setup words that bury the lede.
 5. Swap a generic verb for a power verb.
 6. Add a contradiction. State the consensus, then break it.
 7. Switch from a statement to a withheld reveal ("I won't say the
