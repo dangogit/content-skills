@@ -22,6 +22,41 @@ claude --plugin-dir ./plugins/content-factory
 /reload-plugins
 ```
 
+## Prerequisites
+
+Installing the plugin only copies these skills into Claude Code. It does **not**
+install any system software - Claude Code plugins have no install step and
+cannot run a package manager for you. Put the tools below on your `PATH` before
+relying on the skills, or the QA gates will exit with a missing-dependency error.
+
+### To run the bundled QA gates (every skill)
+
+| Tool | Used by | Install |
+|---|---|---|
+| `python3` 3.9+ | Every `check_*.py` contract gate and `analyze_metricool.py`. Standard library only - **no `pip install` needed**. | Preinstalled on macOS/Linux, or `brew install python` |
+| `ffmpeg` / `ffprobe` | The Reel media contract (`check-reel-media.sh`) and the video QA commands (loudness, silence, frame extraction). | macOS `brew install ffmpeg` · Debian/Ubuntu `apt install ffmpeg` · Windows `winget install ffmpeg` or WSL |
+
+Quick check that the gates will run:
+
+```bash
+python3 --version && ffprobe -version | head -1
+```
+
+### To run full automation (optional)
+
+The heavy lifting - rendering carousels, captioning video, uploading media, and
+publishing - runs scripts and reads design files that live in **your** content
+repo (`${CLAUDE_PROJECT_DIR}`), not in this plugin. On a fresh machine the skills
+still load and give full guidance; only these automation steps stay dark until
+you supply:
+
+| Tool / thing | Why it is needed |
+|---|---|
+| `node` 18+ | Your project renderers and uploaders, e.g. `caption-video.mjs`, `upload-artifact-r2.mjs`. |
+| Your content repo + `.content-factory.json` | Paths to renderer, design system, ledger, and media host. See [Configure before publishing](#configure-before-publishing). |
+| A transcription tool | `transcribe-hebrew-captions.py` for Hebrew captions (local Whisper or an API - your choice). |
+| Authenticated MCP servers + platform accounts | Metricool, media host, CTA automation. The plugin never bundles credentials. |
+
 ## Skills
 
 | Skill | Invoke | What it does |
