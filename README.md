@@ -42,19 +42,31 @@ Quick check that the gates will run:
 python3 --version && ffprobe -version | head -1
 ```
 
-### To run full automation (optional)
+### The renderers are not included (read this)
 
-The heavy lifting - rendering carousels, captioning video, uploading media, and
-publishing - runs scripts and reads design files that live in **your** content
-repo (`${CLAUDE_PROJECT_DIR}`), not in this plugin. On a fresh machine the skills
-still load and give full guidance; only these automation steps stay dark until
-you supply:
+The skills that produce a finished artifact - carousels and captioned Reels -
+call a **render engine that this plugin does not ship and cannot install**. The
+Reel engine is a [Remotion](https://remotion.dev) project (React + Remotion +
+headless Chromium); the carousel engine is a separate image-generation script
+that needs a Gemini API key. These are project code, not npm packages - there is
+nothing to `npm install`. You bring your own renderer or build one.
+
+To build your own, use a Remotion video skill:
+
+- **Remotion** - the framework the sample scripts render with: https://remotion.dev
+- **HyperFrames** - an installable public renderer skill (`npx hyperframes`,
+  renders video from HTML, Node 22+ and FFmpeg): https://hyperframes.heygen.com
+
+On a fresh machine the skills still load and give full guidance plus the QA
+gates; only these render/publish steps stay dark until you supply the renderer
+and:
 
 | Tool / thing | Why it is needed |
 |---|---|
-| `node` 18+ | Your project renderers and uploaders, e.g. `caption-video.mjs`, `upload-artifact-r2.mjs`. |
+| `node` 18+ (22+ for HyperFrames) | Runs your renderer and uploaders. |
 | Your content repo + `.content-factory.json` | Paths to renderer, design system, ledger, and media host. See [Configure before publishing](#configure-before-publishing). |
 | A transcription tool | `transcribe-hebrew-captions.py` for Hebrew captions (local Whisper or an API - your choice). |
+| A Gemini API key | Carousel image generation. Never commit it. |
 | Authenticated MCP servers + platform accounts | Metricool, media host, CTA automation. The plugin never bundles credentials. |
 
 ## Skills
