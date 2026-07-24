@@ -39,10 +39,34 @@ scheduled id/uuid, and current route status. Reject generic `guide` promises.
 - No collision with active routes or common casual comments.
 - One typo recovery only when unique.
 
-### Step 3: Build Durable Artifact
+### Step 3: Build A Beginner-First Artifact
 
-Publish the guide at a stable URL. Verify HTTP `200`, expected content, correct
-language, and no accidental local-only URL.
+Assume the reader is not technical unless the approved audience explicitly says
+otherwise. The guide must help the reader act before it explains how the system
+works.
+
+- Open with the outcome and, when relevant, a simple choice between the user's
+  product, device, or screen.
+- Put the first useful action before history, architecture, bug analysis,
+  evidence, and credits.
+- Remove unnecessary jargon. Explain every necessary term at first use.
+- For downloads and setup, name the exact icon, button, menu item, file ending,
+  and normal file location.
+- Make the primary destination a clickable action, not only a raw URL in a copy
+  box.
+- Include one short success check with the exact expected result.
+- Follow it with a small, ordered troubleshooting section.
+- Move optional developer instructions and technical sources to the end.
+- For hidden or unfamiliar controls, include a current screenshot when
+  available. Otherwise describe the icon, location, and visible label.
+
+Run the 10-second test before publishing: can a non-technical reader tell whether
+the guide applies to them and identify the first click within 10 seconds? If not,
+rewrite it.
+
+Publish the approved guide at a stable URL. Verify HTTP `200`, expected content,
+correct language, clickable actions, copy controls, and the complete path on
+mobile and desktop.
 
 ### Step 4: Activate Delivery Route
 
@@ -98,8 +122,9 @@ Status:
 ## Key Principles
 
 1. Named artifact, not vague promise.
-2. Live URL, not draft path.
-3. Exact route, not assumed automation.
-4. Synthetic delivery, not green config.
-5. Write-back, not verbal completion.
-6. One requested resource, not hidden outreach funnel.
+2. Action first, technical background last.
+3. Live URL, not draft path.
+4. Exact route, not assumed automation.
+5. Synthetic delivery, not green config.
+6. Write-back, not verbal completion.
+7. One requested resource, not hidden outreach funnel.
